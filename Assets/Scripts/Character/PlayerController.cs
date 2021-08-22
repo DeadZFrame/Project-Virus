@@ -7,7 +7,9 @@ public class PlayerController : MonoBehaviour
     public CharacterController controller; //Controller için referans
     public Transform cam;
 
-    public float speed = 6f; //Hýz için deðiþken
+    public float speed = 0f; //Hýz için deðiþken
+    public float maxSpeed = 10f;
+    public float acceleration = 50f;
 
     public float turnSmoothTime = 0.1f; // frame baþýna dönüþ için 
 
@@ -15,6 +17,7 @@ public class PlayerController : MonoBehaviour
 
     float gravity = -9.81f;
     Vector3 velocity = Vector3.zero;
+    Vector3 moveDir;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -43,9 +46,46 @@ public class PlayerController : MonoBehaviour
 
             transform.rotation = Quaternion.Euler(0f, angle, 0f); // Hangi eksende döneceði bilgisi
 
-            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward; // rotation into direction kamera için 
+            moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward; // rotation into direction kamera için 
             controller.Move(moveDir.normalized * speed * Time.deltaTime); //Yön bilgisi
+
+            
         }
+        else if(direction.magnitude <= 0f)
+        {
+            controller.Move(moveDir.normalized * speed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            speed += acceleration * Time.deltaTime;
+            if (speed > 15f)
+            {
+                acceleration = 0;
+            }
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            acceleration = 5;
+            if(speed > 0)
+            {
+                speed -= (acceleration * Time.deltaTime) * 2;
+            }
+            else
+            {
+                speed -= acceleration * Time.deltaTime;
+            }
+        }
+        else
+        {
+            acceleration = 5;
+            if (speed > 0)
+                speed -= (acceleration * Time.deltaTime) / 2;
+            if(speed < 0)
+                speed += (acceleration * Time.deltaTime) / 2;
+            if (speed > 0 && speed < 1 || speed > 0 && speed < -1)
+                speed = 0;
+        }
+            
     }
 
     public void Gravity()
