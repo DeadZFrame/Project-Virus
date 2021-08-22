@@ -21,10 +21,12 @@ public class SecurityBot : MonoBehaviour
             securityBots[i].AddComponent<NavMeshAgent>();
             securityBots[i].AddComponent<Light>();
             securityBots[i].GetComponent<MeshRenderer>().sharedMaterial = materials[0];
+            securityBots[i].GetComponent<Light>().color = Color.blue;
+            securityBots[i].GetComponent<Light>().intensity = 5;
         }
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         Detection();
         Chase();
