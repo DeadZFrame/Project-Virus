@@ -55,10 +55,9 @@ public class PlayerController : MonoBehaviour
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
-            Debug.Log(isGrounded);
         }
 
-        Debug.Log(velocity);
+        //Debug.Log(velocity);
         
 
         velocity.y += gravity * Time.deltaTime;
