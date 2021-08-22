@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     Vector3 velocity = Vector3.zero;
 
     public Transform groundCheck;
-    public float groundDistance;
+    public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
     bool isGrounded;
@@ -55,7 +55,11 @@ public class PlayerController : MonoBehaviour
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
+            Debug.Log(isGrounded);
         }
+
+        Debug.Log(velocity);
+        
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
