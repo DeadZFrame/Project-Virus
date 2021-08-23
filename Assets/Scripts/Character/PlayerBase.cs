@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerBase: MonoBehaviour
 {
-    [System.NonSerialized]public static PlayerBase referance;
-    public float health = 100;
+    public static float health = 100;
 
     private void Update()
     {

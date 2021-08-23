@@ -25,7 +25,7 @@ public class UI_Manager : MonoBehaviour
 
     public void HealthBar()
     {
-        healthBar.GetComponent<Slider>().value = PlayerBase.referance.health/100;    
+        healthBar.GetComponent<Slider>().value = PlayerBase.health/100;    
     }
 
     public void Speedometer()

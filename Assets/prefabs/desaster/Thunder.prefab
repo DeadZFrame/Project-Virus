@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7704619573566306258}
   m_Layer: 0
   m_Name: Thunder
-  m_TagString: Untagged
+  m_TagString: Thunder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,7 +64,7 @@ GameObject:
   - component: {fileID: 3102910687362390766}
   m_Layer: 8
   m_Name: thunder gfx
-  m_TagString: Untagged
+  m_TagString: Thunder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
