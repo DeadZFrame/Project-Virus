@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7704619573566306258}
   m_Layer: 0
   m_Name: earthquake
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51093144850387788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.5, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.06, z: 2.44}
+  m_LocalPosition: {x: 0, y: -3.9, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 2071800424422846169}
   m_Father: {fileID: 0}
@@ -64,7 +64,7 @@ GameObject:
   - component: {fileID: 200047557865395608}
   m_Layer: 8
   m_Name: Cube
-  m_TagString: Thunder
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,13 +76,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5830127059782922575}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 8}
   m_Children: []
   m_Father: {fileID: 453085196115802335}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &4749463658781587443
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -90,7 +90,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5830127059782922575}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -5495902117074765545, guid: 4d8ec45ec4411ba43a53e8f49773ff23, type: 3}
 --- !u!23 &3965961581359219157
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -143,8 +143,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 8.322664, y: 1, z: 0.5293587}
+  m_Center: {x: -0.04127761, y: 0, z: 0.13551119}
 --- !u!95 &5026355444140915166
 Animator:
   serializedVersion: 3
