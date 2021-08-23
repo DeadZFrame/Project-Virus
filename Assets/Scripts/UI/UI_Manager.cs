@@ -9,6 +9,7 @@ public class UI_Manager : MonoBehaviour
     PlayerController player;
 
     public TextMeshProUGUI speedometer;
+    public Slider healthBar;
 
     private void Awake()
     {
@@ -18,7 +19,18 @@ public class UI_Manager : MonoBehaviour
 
     private void Update()
     {
-        if(player.speed > 0)
+        Speedometer();
+        HealthBar();
+    }
+
+    public void HealthBar()
+    {
+        healthBar.GetComponent<Slider>().value = PlayerBase.referance.health/100;    
+    }
+
+    public void Speedometer()
+    {
+        if (player.speed > 0)
             speedometer.text = (player.speed * 10).ToString("0") + "km/h";
         else speedometer.text = (-player.speed * 10).ToString("0") + "km/h";
     }
