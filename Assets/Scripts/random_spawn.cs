@@ -33,7 +33,7 @@ public class random_spawn : MonoBehaviour
             int rand_horizontal = Random.Range(-2, 3);
             rand_horizontal = rand_horizontal * horizantal_width;
             GameObject random_object = get_random_object();
-            Instantiate(random_object, new Vector3(i, player.transform.position.y, player.transform.position.z + rand_horizontal), Quaternion.identity);
+            Instantiate(random_object, new Vector3(i, random_object.transform.position.y, player.transform.position.z + rand_horizontal), Quaternion.identity);
             rand_vertical = Random.Range((int)randomness.x, (int)randomness.y);
         }
     }

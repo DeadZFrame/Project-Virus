@@ -1903,9 +1903,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objects:
   - {fileID: 51093144850387788, guid: 382e800708480ad4ca4f2af46e79751e, type: 3}
+  - {fileID: 51093144850387788, guid: 5ef53998009d19e4ea6fc54c7e680b49, type: 3}
   player: {fileID: 1810932088}
   end_point: {x: -119.26, y: 0, z: 0}
-  horizantal_width: 5
+  horizantal_width: 4
   vertical_randomnes: {x: 10, y: 25}
 --- !u!4 &2091189893
 Transform:
