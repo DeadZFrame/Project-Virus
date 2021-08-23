@@ -101,28 +101,28 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
-            if(VRotate <= 10f)
+            if(VRotate <= 5f)
                 VRotate += 5f * Time.deltaTime;
             else VRotate = 0;
 
-            if (rotation > -30)
-                rotation -= 100f * Time.deltaTime;
+            if (rotation > -13)
+                rotation -= 80f * Time.deltaTime;
             direction = new Vector3(1, 0, VRotate);
             
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            if (VRotate <= 10f)
+            if (VRotate <= 5f)
                 VRotate -= 5f * Time.deltaTime;
             else VRotate = 0;
 
-            if (rotation < 30)
-                rotation += 100f * Time.deltaTime;
+            if (rotation < 13)
+                rotation += 80f * Time.deltaTime;
             direction = new Vector3(1, 0, VRotate);
         }
         else
         {
-            rotation = Mathf.Lerp(rotation, 0 , 0.05f);
+            rotation = Mathf.Lerp(rotation, 0 , 0.08f);
             VRotate = 0;
         }
     }

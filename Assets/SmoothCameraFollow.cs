@@ -11,7 +11,7 @@ public class SmoothCameraFollow : MonoBehaviour
     public Vector3 offset;
     Vector3 velocity = Vector3.zero;
 
-    private void Update()
+    private void LateUpdate()
     {
         Vector3 cameraPos = player.position + offset;
         Vector3 smoothTrack = Vector3.SmoothDamp(transform.position, cameraPos, ref velocity, smoothSpeed);
