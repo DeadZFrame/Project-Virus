@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed = 10f;
     public float acceleration = 50f;
     private float rotation = 0;
+    private float VRotate = 0;
 
     public float turnSmoothTime = 10f; // frame baþýna dönüþ için 
 
@@ -43,7 +44,7 @@ public class PlayerController : MonoBehaviour
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y; //Atan2 parentez arasýnda verilen iki axes arasýndaki açýyý veren ve 0 dan baþlayan bir deðer / Rad2Deg Radyan ý dereceye çeviren fonksiyon / + cam.eulerAngles.y kameranýn y de yaptýðý harteketi ekliyoruz
 
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime * Time.deltaTime); // Þu an ki angle==transform.eulerAngles.y / turnSmoothVelocity==þu anki smooth velocity 
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime); // Þu an ki angle==transform.eulerAngles.y / turnSmoothVelocity==þu anki smooth velocity 
 
             //transform.rotation = Quaternion.Euler(0f, angle, 0f); // Hangi eksende döneceði bilgisi
 
@@ -72,8 +73,6 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            direction = new Vector3(-1, 0, 0).normalized;
-            
             if(speed > 0)
             {
                 speed -= (acceleration * Time.deltaTime) * 2;
@@ -81,15 +80,17 @@ public class PlayerController : MonoBehaviour
             else
             {
                 speed -= acceleration * Time.deltaTime;
+                direction = new Vector3(-1, 0, 0).normalized;
+                if (speed > maxSpeed / 8)
+                {
+                    acceleration = 0;
+                }
+                else
+                {
+                    acceleration = 5;
+                }
             }
-            if (speed > maxSpeed / 8)
-            {
-                acceleration = 0;
-            }
-            else
-            {
-                acceleration = 5;
-            }
+
         }
         else
         {
@@ -103,13 +104,28 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
-            direction = new Vector3(1, 0, 1);
-            rotation -= 50f * Time.deltaTime;
+            if(VRotate <= 10f)
+                VRotate += 2f * Time.deltaTime;
+            else VRotate = 0;
+
+            if (transform.rotation.y > -30)
+                rotation -= 40f * Time.deltaTime;
+            direction = new Vector3(1, 0, VRotate);
         }
-        if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D))
         {
-            direction = new Vector3(1, 0, -1);
-            rotation += 50f * Time.deltaTime;
+            if (VRotate <= 10f)
+                VRotate -= 2f * Time.deltaTime;
+            else VRotate = 0;
+
+            if (transform.rotation.y < 30)
+                rotation += 40f * Time.deltaTime;
+            direction = new Vector3(1, 0, VRotate);
+        }
+        else
+        {
+            rotation = Mathf.Lerp(rotation, 0 , 0.125f);
+            VRotate = 0;
         }
 
     }
