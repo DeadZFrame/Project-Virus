@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y; //Atan2 parentez arasýnda verilen iki axes arasýndaki açýyý veren ve 0 dan baþlayan bir deðer / Rad2Deg Radyan ý dereceye çeviren fonksiyon / + cam.eulerAngles.y kameranýn y de yaptýðý harteketi ekliyoruz
 
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime); // Þu an ki angle==transform.eulerAngles.y / turnSmoothVelocity==þu anki smooth velocity 
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime * Time.deltaTime); // Þu an ki angle==transform.eulerAngles.y / turnSmoothVelocity==þu anki smooth velocity 
 
             transform.rotation = Quaternion.Euler(0f, angle, 0f); // Hangi eksende döneceði bilgisi
 
