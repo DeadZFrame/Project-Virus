@@ -16,7 +16,6 @@ public class check_player : MonoBehaviour
     {
         if(Physics.CheckSphere(transform.position, radius, layerMask))
         {
-            Debug.Log("yes");
             //activate the child object
             GameObject child = gameObject.transform.GetChild(0).gameObject;
             child.SetActive(true);

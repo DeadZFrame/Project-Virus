@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51093144850387788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3054501489104077869}
@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 8782386053748329103}
   - component: {fileID: 2477532068251117681}
   - component: {fileID: 5463284868818229643}
+  - component: {fileID: 3102910687362390766}
   m_Layer: 0
   m_Name: thunder gfx
   m_TagString: Untagged
@@ -164,6 +165,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3102910687362390766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4927576494122125194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3675304912286374089cffae8d060faf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Particule_to_spawn: {fileID: 8293475662436758332, guid: ba0ce5884bba42247bf285215566ac57, type: 3}
 --- !u!1 &7086910426478023714
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +206,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7086910426478023714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.05, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 0.05, z: 2}
   m_Children:
   - {fileID: 2640618336001719747}
