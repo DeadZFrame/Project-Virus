@@ -11,6 +11,8 @@ public class UI_Manager : MonoBehaviour
     public TextMeshProUGUI speedometer;
     public Slider healthBar;
 
+    public Vector3 speedometerOffset, velocity = Vector3.zero;
+
     private void Awake()
     {
         speedometer.GetComponent<TextMeshProUGUI>();
@@ -31,7 +33,12 @@ public class UI_Manager : MonoBehaviour
     public void Speedometer()
     {
         if (player.speed > 0)
-            speedometer.text = (player.speed * 10).ToString("0") + "km/h";
-        else speedometer.text = (-player.speed * 10).ToString("0") + "km/h";
+            speedometer.text = (player.speed * 5).ToString("0") + "km/h";
+        else speedometer.text = (-player.speed * 5).ToString("0") + "km/h";
+
+        Vector3 wantedPos = Camera.main.WorldToScreenPoint(player.transform.position) + speedometerOffset;
+        Vector3 smoothToPos = Vector3.SmoothDamp(speedometer.gameObject.transform.position, wantedPos, ref velocity, 0.15f);
+
+        speedometer.gameObject.transform.position = smoothToPos;
     }
 }

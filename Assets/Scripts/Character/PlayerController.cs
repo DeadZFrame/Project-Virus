@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
     float gravity = -9.81f;
     Vector3 velocity = Vector3.zero;
-    Vector3 moveDir, direction;
+    Vector3 moveDir, direction, steer;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -101,24 +101,28 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
-            if(VRotate <= 5f)
-                VRotate += 5f * Time.deltaTime;
+            if(VRotate <= 1f)
+                VRotate += 0.2f * Time.deltaTime;
             else VRotate = 0;
 
             if (rotation > -13)
-                rotation -= 80f * Time.deltaTime;
-            direction = new Vector3(1, 0, VRotate);
-            
+                rotation -= 50f * Time.deltaTime;
+            steer = new Vector3(0, 0, VRotate);
+
+            controller.Move(steer.normalized * Time.deltaTime);
+
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            if (VRotate <= 5f)
-                VRotate -= 5f * Time.deltaTime;
+            if (VRotate <= 1f)
+                VRotate -= 0.2f * Time.deltaTime;
             else VRotate = 0;
 
             if (rotation < 13)
-                rotation += 80f * Time.deltaTime;
-            direction = new Vector3(1, 0, VRotate);
+                rotation += 50f * Time.deltaTime;
+            steer = new Vector3(0, 0, VRotate);
+
+            controller.Move(steer.normalized * speed * Time.deltaTime);
         }
         else
         {
