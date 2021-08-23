@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public Transform cam;
 
     public float speed = 0f; //Hýz için deðiþken
-    public float maxSpeed = 10f;
+    public float maxSpeed = 10f, minSpeed;
     public float acceleration = 50f;
     private float rotation = 0;
     private float VRotate = 0;
@@ -50,13 +50,11 @@ public class PlayerController : MonoBehaviour
 
             //moveDir = Quaternion.Euler(0f, rotation, 0f) * Vector3.forward; // rotation into direction kamera için 
             transform.rotation = Quaternion.Euler(0, rotation, 0);
-            controller.Move(direction.normalized * speed * Time.deltaTime); //Yön bilgisi
-
-            
+            controller.Move(direction.normalized * speed * Time.deltaTime); //Yön bilgisi  
         }
         else if(direction.magnitude <= 0f)
         {
-            controller.Move(moveDir.normalized * speed * Time.deltaTime);
+            controller.Move(direction.normalized * speed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.W))
         {
@@ -80,8 +78,8 @@ public class PlayerController : MonoBehaviour
             else
             {
                 speed -= acceleration * Time.deltaTime;
-                direction = new Vector3(-1, 0, 0).normalized;
-                if (speed > maxSpeed / 8)
+                direction = new Vector3(1, 0, 0).normalized;
+                if (speed < minSpeed)
                 {
                     acceleration = 0;
                 }
@@ -90,7 +88,6 @@ public class PlayerController : MonoBehaviour
                     acceleration = 5;
                 }
             }
-
         }
         else
         {
@@ -105,29 +102,29 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             if(VRotate <= 10f)
-                VRotate += 2f * Time.deltaTime;
+                VRotate += 5f * Time.deltaTime;
             else VRotate = 0;
 
-            if (transform.rotation.y > -30)
-                rotation -= 40f * Time.deltaTime;
+            if (rotation > -30)
+                rotation -= 100f * Time.deltaTime;
             direction = new Vector3(1, 0, VRotate);
+            
         }
         else if (Input.GetKey(KeyCode.D))
         {
             if (VRotate <= 10f)
-                VRotate -= 2f * Time.deltaTime;
+                VRotate -= 5f * Time.deltaTime;
             else VRotate = 0;
 
-            if (transform.rotation.y < 30)
-                rotation += 40f * Time.deltaTime;
+            if (rotation < 30)
+                rotation += 100f * Time.deltaTime;
             direction = new Vector3(1, 0, VRotate);
         }
         else
         {
-            rotation = Mathf.Lerp(rotation, 0 , 0.125f);
+            rotation = Mathf.Lerp(rotation, 0 , 0.05f);
             VRotate = 0;
         }
-
     }
 
     public void Gravity()

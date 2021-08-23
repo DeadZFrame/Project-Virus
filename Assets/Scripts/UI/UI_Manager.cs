@@ -18,6 +18,8 @@ public class UI_Manager : MonoBehaviour
 
     private void Update()
     {
-        speedometer.text = (player.speed * 10).ToString("0") + "km/h";
+        if(player.speed > 0)
+            speedometer.text = (player.speed * 10).ToString("0") + "km/h";
+        else speedometer.text = (-player.speed * 10).ToString("0") + "km/h";
     }
 }
