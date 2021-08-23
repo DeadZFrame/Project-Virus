@@ -7,7 +7,6 @@ using TMPro;
 public class UI_Manager : MonoBehaviour
 {
     PlayerController player;
-    public PlayerBase playerBase;
 
     public TextMeshProUGUI speedometer;
     public Slider healthBar;
@@ -26,7 +25,7 @@ public class UI_Manager : MonoBehaviour
 
     public void HealthBar()
     {
-        healthBar.GetComponent<Slider>().value = playerBase.health/100;    
+        healthBar.GetComponent<Slider>().value = PlayerBase.health/100;    
     }
 
     public void Speedometer()
