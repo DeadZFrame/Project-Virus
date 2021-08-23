@@ -1,26 +1,32 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-    private const string horizontal = "horizontal";
-    private const string vertical = "vertical";
+    private const string HORIZONTAL = "Horizontal";
+    private const string VERTICAL = "Vertical";
 
-    private float horizontaInput;
+    private float horizontalInput;
     private float verticalInput;
-    private float currentBreakAngle;
     private float currentSteerAngle;
-    private bool isBreaking = false;
+    private float currentbreakForce;
+    private bool isBreaking;
 
-    [SerializeField] private float motorForce, breakForce, maxSteerAnge;
+    [SerializeField] private float motorForce;
+    [SerializeField] private float breakForce;
+    [SerializeField] private float maxSteerAngle;
 
-    public Transform frontLeftWheelTransform;
-    public Transform frontRightWheeTransform;
-    public Transform rearLeftWheelTransform;
-    public Transform rearRightWheelTransform;
+    [SerializeField] private WheelCollider frontLeftWheelCollider;
+    [SerializeField] private WheelCollider frontRightWheelCollider;
+    [SerializeField] private WheelCollider rearLeftWheelCollider;
+    [SerializeField] private WheelCollider rearRightWheelCollider;
 
-    public WheelCollider frontLeftWheel, frontRightWheel, rearLeftWheel, rearRightWheel;
+    [SerializeField] private Transform frontLeftWheelTransform;
+    [SerializeField] private Transform frontRightWheeTransform;
+    [SerializeField] private Transform rearLeftWheelTransform;
+    [SerializeField] private Transform rearRightWheelTransform;
 
     private void FixedUpdate()
     {
@@ -30,44 +36,43 @@ public class CarController : MonoBehaviour
         UpdateWheels();
     }
 
-    public void GetInput()
+
+    private void GetInput()
     {
-        horizontaInput = Input.GetAxis(horizontal);
-        verticalInput = Input.GetAxis(vertical);
+        horizontalInput = Input.GetAxis(HORIZONTAL);
+        verticalInput = Input.GetAxis(VERTICAL);
         isBreaking = Input.GetKey(KeyCode.Space);
     }
 
-    public void HandleMotor()
+    private void HandleMotor()
     {
-        frontLeftWheel.motorTorque = verticalInput * motorForce;
-        frontRightWheel.motorTorque = verticalInput * motorForce;
-        currentBreakAngle = isBreaking ? breakForce : 0f;
+        frontLeftWheelCollider.motorTorque = verticalInput * motorForce;
+        frontRightWheelCollider.motorTorque = verticalInput * motorForce;
+        currentbreakForce = isBreaking ? breakForce : 0f;
         ApplyBreaking();
     }
 
-    public void ApplyBreaking()
+    private void ApplyBreaking()
     {
-        frontLeftWheel.brakeTorque = currentBreakAngle;
-        frontRightWheel.brakeTorque = currentBreakAngle;
-        rearLeftWheel.brakeTorque = currentBreakAngle;
-        rearRightWheel.brakeTorque = currentBreakAngle;
+        frontRightWheelCollider.brakeTorque = currentbreakForce;
+        frontLeftWheelCollider.brakeTorque = currentbreakForce;
+        rearLeftWheelCollider.brakeTorque = currentbreakForce;
+        rearRightWheelCollider.brakeTorque = currentbreakForce;
     }
 
-    public void HandleSteering()
+    private void HandleSteering()
     {
-        currentSteerAngle = maxSteerAnge * horizontaInput;
-        frontLeftWheel.steerAngle = currentSteerAngle;
-        frontRightWheel.steerAngle = currentSteerAngle;
+        currentSteerAngle = maxSteerAngle * horizontalInput;
+        frontLeftWheelCollider.steerAngle = currentSteerAngle;
+        frontRightWheelCollider.steerAngle = currentSteerAngle;
     }
 
-    public void UpdateWheels()
+    private void UpdateWheels()
     {
-        UpdateSingleWheel(frontLeftWheel, frontLeftWheelTransform);
-        UpdateSingleWheel(frontLeftWheel, frontRightWheeTransform);
-        UpdateSingleWheel(frontLeftWheel, rearRightWheelTransform);
-        UpdateSingleWheel(frontLeftWheel, rearLeftWheelTransform);
-
-
+        UpdateSingleWheel(frontLeftWheelCollider, frontLeftWheelTransform);
+        UpdateSingleWheel(frontRightWheelCollider, frontRightWheeTransform);
+        UpdateSingleWheel(rearRightWheelCollider, rearRightWheelTransform);
+        UpdateSingleWheel(rearLeftWheelCollider, rearLeftWheelTransform);
     }
 
     private void UpdateSingleWheel(WheelCollider wheelCollider, Transform wheelTransform)
