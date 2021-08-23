@@ -10,14 +10,15 @@ public class PlayerController : MonoBehaviour
     public float speed = 0f; //Hýz için deðiþken
     public float maxSpeed = 10f;
     public float acceleration = 50f;
+    private float rotation = 0;
 
-    public float turnSmoothTime = 0.1f; // frame baþýna dönüþ için 
+    public float turnSmoothTime = 10f; // frame baþýna dönüþ için 
 
     float turnSmoothVelocity; // þu anki smooth velocity nin tutulduðu deðiþken
 
     float gravity = -9.81f;
     Vector3 velocity = Vector3.zero;
-    Vector3 moveDir;
+    Vector3 moveDir, direction;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -34,9 +35,9 @@ public class PlayerController : MonoBehaviour
 
     public void Movement()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized; //x de ve z de harek için + 2 sine de basýnca hýzlarý birleþmesin diye normalized eklendi
+        //float horizontal = Input.GetAxisRaw("Horizontal");
+        //float vertical = Input.GetAxisRaw("Vertical");
+        //Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized; //x de ve z de harek için + 2 sine de basýnca hýzlarý birleþmesin diye normalized eklendi
 
         if (direction.magnitude >= 0.1f)
         {
@@ -44,10 +45,11 @@ public class PlayerController : MonoBehaviour
 
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime * Time.deltaTime); // Þu an ki angle==transform.eulerAngles.y / turnSmoothVelocity==þu anki smooth velocity 
 
-            transform.rotation = Quaternion.Euler(0f, angle, 0f); // Hangi eksende döneceði bilgisi
+            //transform.rotation = Quaternion.Euler(0f, angle, 0f); // Hangi eksende döneceði bilgisi
 
-            moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward; // rotation into direction kamera için 
-            controller.Move(moveDir.normalized * speed * Time.deltaTime); //Yön bilgisi
+            //moveDir = Quaternion.Euler(0f, rotation, 0f) * Vector3.forward; // rotation into direction kamera için 
+            transform.rotation = Quaternion.Euler(0, rotation, 0);
+            controller.Move(direction.normalized * speed * Time.deltaTime); //Yön bilgisi
 
             
         }
@@ -57,14 +59,16 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.W))
         {
+            direction = new Vector3(1, 0, 0).normalized;
             speed += acceleration * Time.deltaTime;
-            if (speed > 15f)
+            if (speed > maxSpeed)
             {
                 acceleration = 0;
             }
         }
         else if (Input.GetKey(KeyCode.S))
         {
+            direction = new Vector3(1, 0, 0).normalized;
             acceleration = 5;
             if(speed > 0)
             {
@@ -82,10 +86,18 @@ public class PlayerController : MonoBehaviour
                 speed -= (acceleration * Time.deltaTime) / 2;
             if(speed < 0)
                 speed += (acceleration * Time.deltaTime) / 2;
-            if (speed > 0 && speed < 1 || speed > 0 && speed < -1)
+            if (speed > 0 && speed < 0.5f || speed > 0 && speed < -0.5f)
                 speed = 0;
         }
-            
+        if (Input.GetKey(KeyCode.A))
+        {
+            rotation -= 20f * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            rotation += 20f * Time.deltaTime;
+        }
+
     }
 
     public void Gravity()
