@@ -7,18 +7,32 @@ using TMPro;
 public class UI_Manager : MonoBehaviour
 {
     PlayerController player;
+    PlayerBase playerBase;
 
     public TextMeshProUGUI speedometer;
+    public Slider healthBar;
 
     private void Awake()
     {
         speedometer.GetComponent<TextMeshProUGUI>();
         player = GameObject.Find("Player").GetComponent<PlayerController>();
+        playerBase = GameObject.Find("Player").GetComponent<PlayerBase>();
     }
 
     private void Update()
     {
-        if(player.speed > 0)
+        Speedometer();
+        HealthBar();
+    }
+
+    public void HealthBar()
+    {
+        healthBar.GetComponent<Slider>().value = playerBase.health/100;    
+    }
+
+    public void Speedometer()
+    {
+        if (player.speed > 0)
             speedometer.text = (player.speed * 10).ToString("0") + "km/h";
         else speedometer.text = (-player.speed * 10).ToString("0") + "km/h";
     }
