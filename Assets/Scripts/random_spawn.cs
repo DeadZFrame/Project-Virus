@@ -40,7 +40,7 @@ public class random_spawn : MonoBehaviour
 
     private GameObject get_random_object()
     {
-        int rand = Random.Range(0, objects.Length - 1);
+        int rand = Random.Range(0, objects.Length);
         return objects[rand];
     }
 }
