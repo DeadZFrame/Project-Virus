@@ -65,11 +65,15 @@ public class PlayerController : MonoBehaviour
             {
                 acceleration = 0;
             }
+            else
+            {
+                acceleration = 5;
+            }
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            direction = new Vector3(1, 0, 0).normalized;
-            acceleration = 5;
+            direction = new Vector3(-1, 0, 0).normalized;
+            
             if(speed > 0)
             {
                 speed -= (acceleration * Time.deltaTime) * 2;
@@ -77,6 +81,14 @@ public class PlayerController : MonoBehaviour
             else
             {
                 speed -= acceleration * Time.deltaTime;
+            }
+            if (speed > maxSpeed / 8)
+            {
+                acceleration = 0;
+            }
+            else
+            {
+                acceleration = 5;
             }
         }
         else
@@ -91,11 +103,13 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
-            rotation -= 20f * Time.deltaTime;
+            direction = new Vector3(1, 0, 1);
+            rotation -= 50f * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            rotation += 20f * Time.deltaTime;
+            direction = new Vector3(1, 0, -1);
+            rotation += 50f * Time.deltaTime;
         }
 
     }
