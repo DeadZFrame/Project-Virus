@@ -17,7 +17,7 @@ public class UI_Manager : MonoBehaviour
     private void Awake()
     {
         speedometer.GetComponent<TextMeshProUGUI>();
-        motorcycle = GameObject.Find("MotoCycle").GetComponent<MotorcycleController>();
+        //motorcycle = GameObject.Find("MotoCycle").GetComponent<MotorcycleController>();
     }
 
     private void Update()
@@ -33,14 +33,14 @@ public class UI_Manager : MonoBehaviour
 
     public void Speedometer() //Method for showing car's speed near of it
     {
-        if (motorcycle.speedval > 0)
-            speedometer.text = motorcycle.speedval.ToString("f1") + "km/h";
-        else speedometer.text = motorcycle.speedval.ToString("f1") + "km/h";
+        //if (motorcycle.speedval > 0)
+        //    speedometer.text = motorcycle.speedval.ToString("f1") + "km/h";
+        //else speedometer.text = motorcycle.speedval.ToString("f1") + "km/h";
 
         //Finds players position from camera's sight and allows UI elements in canvas to follow player
-        Vector3 wantedPos = Camera.main.WorldToScreenPoint(car.transform.position) + speedometerOffset; 
-        Vector3 smoothToPos = Vector3.SmoothDamp(speedometer.gameObject.transform.position, wantedPos, ref velocity, 0.15f);
+        //Vector3 wantedPos = Camera.main.WorldToScreenPoint(car.transform.position) + speedometerOffset; 
+        //Vector3 smoothToPos = Vector3.SmoothDamp(speedometer.gameObject.transform.position, wantedPos, ref velocity, 0.15f);
 
-        speedometer.gameObject.transform.position = smoothToPos;
+        //speedometer.gameObject.transform.position = smoothToPos;
     }
 }
