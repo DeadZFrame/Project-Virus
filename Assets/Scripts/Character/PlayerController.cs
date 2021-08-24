@@ -10,8 +10,8 @@ public class PlayerController : MonoBehaviour
     public float speed = 0f; //Hýz için deðiþken
     public float maxSpeed = 10f, minSpeed;
     public float acceleration = 50f;
-    private float rotation = 0;
-    private float VRotate = 0;
+    private float rotation = 0; //value for car's Quernation rotation
+    private float VRotate = 0; //value for car's z, -z directions
 
     public float turnSmoothTime = 10f; // frame baþýna dönüþ için 
 
@@ -19,7 +19,10 @@ public class PlayerController : MonoBehaviour
 
     float gravity = -9.81f;
     Vector3 velocity = Vector3.zero;
-    Vector3 moveDir, direction, steer;
+
+    //direction vector was used in forward and backwards directions
+    //steer vector was used in left, right directions 
+    Vector3 moveDir, direction, steer; 
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -56,11 +59,11 @@ public class PlayerController : MonoBehaviour
         {
             controller.Move(direction.normalized * speed * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W)) //speed slowly increases with acceleration
         {
             direction = new Vector3(1, 0, 0).normalized;
             speed += acceleration * Time.deltaTime;
-            if (speed > maxSpeed)
+            if (speed > maxSpeed) //speed stops increasing when its maxsSpeed
             {
                 acceleration = 0;
             }
@@ -73,11 +76,11 @@ public class PlayerController : MonoBehaviour
         {
             if(speed > 0)
             {
-                speed -= (acceleration * Time.deltaTime) * 2;
+                speed -= (acceleration * Time.deltaTime) * 2; //break
             }
             else
             {
-                speed -= acceleration * Time.deltaTime;
+                speed -= acceleration * Time.deltaTime; //backwards
                 direction = new Vector3(1, 0, 0).normalized;
                 if (speed < minSpeed)
                 {
@@ -89,7 +92,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-        else
+        else //speed slowly decreases when keys not pressing
         {
             acceleration = 5;
             if (speed > 0)
@@ -99,7 +102,7 @@ public class PlayerController : MonoBehaviour
             if (speed > 0 && speed < 0.5f || speed > 0 && speed < -0.5f)
                 speed = 0;
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A)) //left
         {
             if(VRotate <= 1f)
                 VRotate += 0.2f * Time.deltaTime;
@@ -112,7 +115,7 @@ public class PlayerController : MonoBehaviour
             controller.Move(steer.normalized * Time.deltaTime);
 
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D)) //right
         {
             if (VRotate <= 1f)
                 VRotate -= 0.2f * Time.deltaTime;
@@ -131,7 +134,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Gravity()
+    public void Gravity() //Custom gravity method for non-Rigidbody conditions
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 

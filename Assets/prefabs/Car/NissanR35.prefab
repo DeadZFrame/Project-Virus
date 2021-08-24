@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604092749266671112}
   m_LocalRotation: {x: -0, y: -0.7071067, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.97176933, y: 2.4315827, z: 0.000000083229544}
+  m_LocalPosition: {x: -3.213, y: 2.374, z: -3.682}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2309117043357071147}
@@ -93,8 +93,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.224423, y: 0.79265743, z: 1.340883}
-  m_Center: {x: 0.17766619, y: 0.021295696, z: 0.000000021179465}
+  m_Size: {x: 3.224423, y: 0.8458562, z: 1.340883}
+  m_Center: {x: 0.17766619, y: -0.0053036213, z: 0.000000021179465}
 --- !u!1 &667152879086446250
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,10 +134,10 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667152879086446250}
   m_Center: {x: 0, y: 0.15, z: 0}
-  m_Radius: 0.25
+  m_Radius: 0.26
   m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
+    spring: 900000
+    damper: 30000
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
@@ -276,10 +276,10 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2617655160891560873}
   m_Center: {x: 0, y: 0.15, z: 0}
-  m_Radius: 0.25
+  m_Radius: 0.26
   m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
+    spring: 900000
+    damper: 30000
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
@@ -341,7 +341,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3116615306687638929}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 1500
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -363,15 +363,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   motorForce: 1000
   breakForce: 3000
-  maxSteerAngle: 0
-  frontLeftWheelCollider: {fileID: 5962041768371506539}
-  frontRightWheelCollider: {fileID: 7611898122928265205}
-  rearLeftWheelCollider: {fileID: 477787776016340407}
-  rearRightWheelCollider: {fileID: 3298313627544237327}
-  frontLeftWheelTransform: {fileID: 7194969560487352046}
-  frontRightWheeTransform: {fileID: 9025200849080643109}
-  rearLeftWheelTransform: {fileID: 7281563724445937399}
-  rearRightWheelTransform: {fileID: 3984737273453701549}
+  maxSteerAngle: 30
+  frontLeftWheelCollider: {fileID: 477787776016340407}
+  frontRightWheelCollider: {fileID: 5962041768371506539}
+  rearLeftWheelCollider: {fileID: 3298313627544237327}
+  rearRightWheelCollider: {fileID: 7611898122928265205}
+  frontLeftWheelTransform: {fileID: 7281563724445937399}
+  frontRightWheeTransform: {fileID: 7194969560487352046}
+  rearLeftWheelTransform: {fileID: 3984737273453701549}
+  rearRightWheelTransform: {fileID: 9025200849080643109}
 --- !u!1 &3159944142133976117
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,7 +396,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3159944142133976117}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 2.3084714, y: 0.12520933, z: 3.7111213}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.99999976, y: 1, z: 0.99999976}
   m_Children:
   - {fileID: 7281563724445937399}
@@ -592,7 +592,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6950237105167620353}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 2.3084714, y: 0.12520933, z: 3.7111213}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7266200381250642439}
@@ -641,10 +641,10 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7236696703800579019}
   m_Center: {x: 0, y: 0.15, z: 0}
-  m_Radius: 0.25
+  m_Radius: 0.26
   m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
+    spring: 900000
+    damper: 30000
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
@@ -702,10 +702,10 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8657739380715194569}
   m_Center: {x: 0, y: 0.15, z: 0}
-  m_Radius: 0.25
+  m_Radius: 0.26
   m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
+    spring: 900000
+    damper: 30000
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0

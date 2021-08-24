@@ -33,7 +33,12 @@ public class CarController : MonoBehaviour
         GetInput();
         HandleMotor();
         HandleSteering();
-        UpdateWheels();
+        //UpdateWheels();
+        //if (!Input.anyKey)
+        //{
+        //    currentbreakForce = breakForce;
+        //    ApplyBreaking();
+        //}
     }
 
 

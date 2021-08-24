@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Destroys Lightning Particle
 public class destroy_particule : MonoBehaviour
 {
     public float dest_time = 1;
