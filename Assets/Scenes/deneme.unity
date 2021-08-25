@@ -759,7 +759,7 @@ MonoBehaviour:
   width_height: {x: 1000, y: 1000}
   y_spawn_pos: 1000
   wait_second: 1
-  randomness_intensity: 10
+  randomness_intensity: 50
 --- !u!1 &432353785
 GameObject:
   m_ObjectHideFlags: 0
