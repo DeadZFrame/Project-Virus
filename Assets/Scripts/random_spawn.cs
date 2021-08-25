@@ -62,7 +62,7 @@ public class random_spawn : MonoBehaviour
         {
             GameObject random_object = get_random_object(roads);
             GameObject instantiate_object = Instantiate(random_object, new Vector3(i, random_object.transform.position.y, random_object.transform.position.z), Quaternion.identity);
-            //instantiate_object.SetActive(false);
+            instantiate_object.SetActive(false);
         }
     }
 
