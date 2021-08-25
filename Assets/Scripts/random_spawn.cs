@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class random_spawn : MonoBehaviour
 {
     //objects to spawn
     public GameObject[] objects;
+    public GameObject tornado;
     //player
     public GameObject player;
 
@@ -20,8 +22,18 @@ public class random_spawn : MonoBehaviour
 
     private void Awake()
     {
-        Genereate(player.transform.position, end_point, vertical_randomnes);
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name.Equals("CarRush")) //String is temporary
+        {
+            Genereate(player.transform.position, end_point, vertical_randomnes);
+        }
     }
+
+    private void Start()
+    {
+        SpawnTornado();
+    }
+
     private void Genereate(Vector3 start_point, Vector3 end_point, Vector2 randomness)
     {
         //end point is to define where to end, randomness is for the random spawning for the forward axes
@@ -42,5 +54,22 @@ public class random_spawn : MonoBehaviour
     {
         int rand = Random.Range(0, objects.Length);
         return objects[rand];
+    }
+
+    public int tornadoSpawnCount, distanceIndex;
+    private int spawned = 0;
+    public void SpawnTornado()
+    {
+        float randomX = 0;
+        float randomZ = 0;
+
+        while (spawned <= tornadoSpawnCount)
+        {
+            Vector3 position = new Vector3(randomX, 100, randomZ);
+            Instantiate(tornado, position, Quaternion.identity);
+            randomX = Random.Range(-distanceIndex, distanceIndex) + transform.position.x;
+            randomZ = Random.Range(-distanceIndex, distanceIndex) + transform.position.z;
+            spawned++;
+        }
     }
 }

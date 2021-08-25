@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,12 +27,15 @@ public class CarController : MonoBehaviour
     [SerializeField] private Transform rearLeftWheelTransform;
     [SerializeField] private Transform rearRightWheelTransform;
 
+    private Vector3 prevPos = new Vector3();
+    [System.NonSerialized] public float speedval = 0;
+
     private void FixedUpdate()
     {
         GetInput();
         HandleMotor();
         HandleSteering();
-        //UpdateWheels();
+        UpdateWheels();
         //if (!Input.anyKey)
         //{
         //    currentbreakForce = breakForce;
@@ -41,6 +43,14 @@ public class CarController : MonoBehaviour
         //}
     }
 
+    public void SpeedCalculation()
+    {
+        var posNow = transform.position;
+        var speed = (posNow - prevPos) / Time.fixedDeltaTime;
+        prevPos = posNow;
+
+        speedval = speed.magnitude;
+    }
 
     private void GetInput()
     {
