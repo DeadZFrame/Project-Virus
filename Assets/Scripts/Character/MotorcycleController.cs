@@ -13,6 +13,10 @@ public class MotorcycleController : MonoBehaviour
     private float currentbreakForce;
     private bool isBreaking;
 
+    private bool onTopSpeed, applyFriction;
+    private float friction = 500, currentFriction;
+    private float topSpeedBreak = 5000, currentTopSpeedBreak;
+
     public float motorForce;
     public float breakForce;
     public float maxSteerAngle;
@@ -26,6 +30,7 @@ public class MotorcycleController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        SpeedCalculation();
         GetInput();
         Motor();
         HandleSteering();
@@ -37,7 +42,6 @@ public class MotorcycleController : MonoBehaviour
         var posNow = transform.position;
         var speed = (posNow - prevPos) / Time.fixedDeltaTime;
         prevPos = posNow;
-
         speedval = speed.magnitude;
     }
 
@@ -46,6 +50,7 @@ public class MotorcycleController : MonoBehaviour
         horizontalInput = Input.GetAxis(horizontal);
         verticalInput = -Input.GetAxis(vertical);
         isBreaking = Input.GetKey(KeyCode.Space);
+
     }
 
     public void Motor()
@@ -54,6 +59,21 @@ public class MotorcycleController : MonoBehaviour
         frontLeftCollider.motorTorque = verticalInput * motorForce;
         frontCollider.motorTorque = verticalInput * motorForce;
         currentbreakForce = isBreaking ? breakForce : 0f;
+        if (!Input.anyKey)
+        {
+            applyFriction = true;
+        }
+        else applyFriction = false;
+
+        if (speedval > 35f)
+        {
+            onTopSpeed = true;
+        }
+        else onTopSpeed = false;
+
+        currentFriction = applyFriction ? friction : 0f;
+        currentTopSpeedBreak = onTopSpeed ? topSpeedBreak : 0f;
+
         ApplyBreaking();
     }
 
@@ -61,8 +81,12 @@ public class MotorcycleController : MonoBehaviour
     {
         frontRightCollider.brakeTorque = currentbreakForce;
         rearLeftCollider.brakeTorque = currentbreakForce;
-        rearRightCollider.brakeTorque = currentbreakForce;
-        frontLeftCollider.brakeTorque = currentbreakForce;
+
+        rearRightCollider.brakeTorque = currentFriction;
+        frontLeftCollider.brakeTorque = currentFriction;
+
+        frontCollider.brakeTorque = currentTopSpeedBreak;
+        rearCollider.brakeTorque = currentTopSpeedBreak;
     }
 
     public void HandleSteering()
@@ -81,18 +105,18 @@ public class MotorcycleController : MonoBehaviour
         UpdateSingleWheel(frontLeftCollider, frontLeft);
         UpdateSingleWheel(frontCollider, FrontWheel);
         UpdateSingleWheel(rearCollider, RearWheel);
-        if(Input.GetAxis(horizontal) > 0)
-        {
-            //handleBar.GetComponentInParent<Animation>()
-        }
-        else if(Input.GetAxis(horizontal) < 0)
-        {
+        //if(Input.GetAxis(horizontal) > 0)
+        //{
+        //    //handleBar.GetComponentInParent<Animation>()
+        //}
+        //else if(Input.GetAxis(horizontal) < 0)
+        //{
 
-        }
-        else
-        {
+        //}
+        //else
+        //{
 
-        }
+        //}
 
     }
 
