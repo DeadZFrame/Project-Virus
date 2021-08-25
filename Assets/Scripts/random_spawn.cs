@@ -7,14 +7,19 @@ public class random_spawn : MonoBehaviour
 {
     //objects to spawn
     public GameObject[] objects;
+    public GameObject[] roads;
     public GameObject tornado;
     //player
     public GameObject player;
+
+    public Vector3 start_point;
 
     public Vector3 end_point;
 
     //for the horizantol distance between spawned object
     public int horizantal_width = 10;
+
+    public float object_lengt;
 
     public Vector2 vertical_randomnes = new Vector2(1, 5);
     //the direction where to spawn the obstacles
@@ -23,9 +28,10 @@ public class random_spawn : MonoBehaviour
     private void Awake()
     {
         Scene scene = SceneManager.GetActiveScene();
-        if (scene.name.Equals("CarRush")) //String is temporary
+        if (scene.name.Equals("2012-Level1")) //String is temporary
         {
-            Genereate(player.transform.position, end_point, vertical_randomnes);
+            Genereate_desaster(player.transform.position, end_point, vertical_randomnes);
+            Generate_road(start_point, end_point, object_lengt);
         }
     }
 
@@ -34,7 +40,7 @@ public class random_spawn : MonoBehaviour
         SpawnTornado();
     }
 
-    private void Genereate(Vector3 start_point, Vector3 end_point, Vector2 randomness)
+    private void Genereate_desaster(Vector3 start_point, Vector3 end_point, Vector2 randomness)
     {
         //end point is to define where to end, randomness is for the random spawning for the forward axes
         //usage to define the direction where the spawning goes change the vector in the for loop
@@ -42,18 +48,28 @@ public class random_spawn : MonoBehaviour
 
         for (float i = start_point.x + rand_vertical; i < end_point.x; i += rand_vertical)
         {
+            Debug.Log("yes");
             int rand_horizontal = Random.Range(-2, 3);
             rand_horizontal = rand_horizontal * horizantal_width;
-            GameObject random_object = get_random_object();
+            GameObject random_object = get_random_object(objects);
             Instantiate(random_object, new Vector3(i, random_object.transform.position.y, player.transform.position.z + rand_horizontal), Quaternion.identity);
             rand_vertical = Random.Range((int)randomness.x, (int)randomness.y);
         }
     }
-
-    private GameObject get_random_object()
+    private void Generate_road(Vector3 start_point, Vector3 end_point, float length)
     {
-        int rand = Random.Range(0, objects.Length);
-        return objects[rand];
+        for(float i = start_point.x; i < end_point.x; i += length)
+        {
+            GameObject random_object = get_random_object(roads);
+            GameObject instantiate_object = Instantiate(random_object, new Vector3(i, random_object.transform.position.y, random_object.transform.position.z), Quaternion.identity);
+            //instantiate_object.SetActive(false);
+        }
+    }
+
+    private GameObject get_random_object(GameObject[] Objects)
+    {
+        int rand = Random.Range(0, Objects.Length);
+        return Objects[rand];
     }
 
     public int tornadoSpawnCount, distanceIndex;
