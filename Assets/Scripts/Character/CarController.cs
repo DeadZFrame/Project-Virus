@@ -41,6 +41,7 @@ public class CarController : MonoBehaviour
         //    currentbreakForce = breakForce;
         //    ApplyBreaking();
         //}
+        SpeedCalculation();
     }
 
     public void SpeedCalculation()

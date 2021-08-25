@@ -25,9 +25,11 @@ public class random_spawn : MonoBehaviour
     //the direction where to spawn the obstacles
     //public Vector3 spawn_direction = Vector3.right;
 
+    Scene scene;
+
     private void Awake()
     {
-        Scene scene = SceneManager.GetActiveScene();
+        scene = SceneManager.GetActiveScene();
         if (scene.name.Equals("2012-Level1")) //String is temporary
         {
             Genereate_desaster(player.transform.position, end_point, vertical_randomnes);
@@ -79,13 +81,16 @@ public class random_spawn : MonoBehaviour
         float randomX = 0;
         float randomZ = 0;
 
-        while (spawned <= tornadoSpawnCount)
+        //while (spawned <= tornadoSpawnCount)
         {
             Vector3 position = new Vector3(randomX, 100, randomZ);
-            Instantiate(tornado, position, Quaternion.identity);
-            randomX = Random.Range(-distanceIndex, distanceIndex) + tornado.transform.position.x;
-            randomZ = Random.Range(-distanceIndex, distanceIndex) + tornado.transform.position.z;
-            spawned++;
+            if(scene.name.Equals("deneme") || scene.name.Equals("MotorCycleExample"))
+            {
+                Instantiate(tornado, position, Quaternion.identity);
+                randomX = Random.Range(-distanceIndex, distanceIndex) + tornado.transform.position.x;
+                randomZ = Random.Range(-distanceIndex, distanceIndex) + tornado.transform.position.z;
+                spawned++;
+            }
         }
     }
 }
