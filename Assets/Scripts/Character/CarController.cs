@@ -17,6 +17,10 @@ public class CarController : MonoBehaviour
     [SerializeField] private float breakForce;
     [SerializeField] private float maxSteerAngle;
 
+    private bool onTopSpeed, applyFriction;
+    private float friction = 500, currentFriction;
+    private float topSpeedBreak = 5000, currentTopSpeedBreak;
+
     [SerializeField] private WheelCollider frontLeftWheelCollider;
     [SerializeField] private WheelCollider frontRightWheelCollider;
     [SerializeField] private WheelCollider rearLeftWheelCollider;
@@ -65,6 +69,22 @@ public class CarController : MonoBehaviour
         frontLeftWheelCollider.motorTorque = verticalInput * motorForce;
         frontRightWheelCollider.motorTorque = verticalInput * motorForce;
         currentbreakForce = isBreaking ? breakForce : 0f;
+
+        if (!Input.anyKey)
+        {
+            applyFriction = true;
+        }
+        else applyFriction = false;
+
+        if (speedval > 35f)
+        {
+            onTopSpeed = true;
+        }
+        else onTopSpeed = false;
+
+        currentFriction = applyFriction ? friction : 0f;
+        currentTopSpeedBreak = onTopSpeed ? topSpeedBreak : 0f;
+
         ApplyBreaking();
     }
 
@@ -72,8 +92,9 @@ public class CarController : MonoBehaviour
     {
         frontRightWheelCollider.brakeTorque = currentbreakForce;
         frontLeftWheelCollider.brakeTorque = currentbreakForce;
-        rearLeftWheelCollider.brakeTorque = currentbreakForce;
-        rearRightWheelCollider.brakeTorque = currentbreakForce;
+
+        rearLeftWheelCollider.brakeTorque = currentTopSpeedBreak;
+        rearRightWheelCollider.brakeTorque = currentTopSpeedBreak;
     }
 
     private void HandleSteering()
