@@ -17,7 +17,7 @@ public class MotorcycleController : MonoBehaviour
     public float breakForce;
     public float maxSteerAngle;
 
-    public Transform FrontWheel, RearWheel, handleBar;
+    public Transform FrontWheel, RearWheel, handleBar , gfx;
     public Transform frontRight, frontLeft, rearRight, rearLeft;
     public WheelCollider frontRightCollider, frontLeftCollider, rearRightCollider, rearLeftCollider, frontCollider, rearCollider;
 
@@ -80,7 +80,20 @@ public class MotorcycleController : MonoBehaviour
         UpdateSingleWheel(rearRightCollider, rearRight);
         UpdateSingleWheel(frontLeftCollider, frontLeft);
         UpdateSingleWheel(frontCollider, FrontWheel);
-        UpdateSingleWheel(rearCollider, RearWheel);    
+        UpdateSingleWheel(rearCollider, RearWheel);
+        if(Input.GetAxis(horizontal) > 0)
+        {
+            //handleBar.GetComponentInParent<Animation>()
+        }
+        else if(Input.GetAxis(horizontal) < 0)
+        {
+
+        }
+        else
+        {
+
+        }
+
     }
 
     private void UpdateSingleWheel(WheelCollider wheelCollider, Transform wheelTransform)
