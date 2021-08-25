@@ -156,7 +156,6 @@ public class plane_controller : MonoBehaviour
     }
     public void rotate_vertically()
     {
-        Debug.Log(rotation_referance.rotation.eulerAngles.x);
         Vector3 delta_rotation = Global_rotation * Time.fixedDeltaTime;
         rotation_referance.Rotate(delta_rotation);
         //Debug.Log(rotation_referance.rotation.x);
