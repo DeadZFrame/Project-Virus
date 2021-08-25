@@ -50,7 +50,6 @@ public class random_spawn : MonoBehaviour
 
         for (float i = start_point.x + rand_vertical; i < end_point.x; i += rand_vertical)
         {
-            Debug.Log("yes");
             int rand_horizontal = Random.Range(-2, 3);
             rand_horizontal = rand_horizontal * horizantal_width;
             GameObject random_object = get_random_object(objects);
@@ -63,7 +62,7 @@ public class random_spawn : MonoBehaviour
         for(float i = start_point.x; i < end_point.x; i += length)
         {
             GameObject random_object = get_random_object(roads);
-            GameObject instantiate_object = Instantiate(random_object, new Vector3(i, random_object.transform.position.y, random_object.transform.position.z), Quaternion.identity);
+            GameObject instantiate_object = Instantiate(random_object, new Vector3(i, start_point.y, start_point.z), Quaternion.identity);
             //instantiate_object.SetActive(false);
         }
     }

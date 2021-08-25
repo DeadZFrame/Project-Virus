@@ -47,6 +47,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 128
+  object_to_set_active: {fileID: 7086910426478023714}
   radius: 50
 --- !u!1 &3234796205801078080
 GameObject:

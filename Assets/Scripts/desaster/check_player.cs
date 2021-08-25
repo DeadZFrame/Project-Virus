@@ -6,19 +6,25 @@ public class check_player : MonoBehaviour
 {
     public LayerMask layerMask;
 
+    public GameObject object_to_set_active;
+
     public float radius = 5f;
 
     private void Update()
     {
-        check();
+        check(object_to_set_active);
     }
-    void check()
+    void check(GameObject object_to_set_active)
     {
         if(Physics.CheckSphere(transform.position, radius, layerMask))
         {
             //activate the child object
-            GameObject child = gameObject.transform.GetChild(0).gameObject;
-            child.SetActive(true);
+            object_to_set_active.SetActive(true);
+        }
+        else if(gameObject.tag == "ground")
+        {
+            Debug.Log("yes");
+            object_to_set_active.SetActive(false);
         }
     }
 }
