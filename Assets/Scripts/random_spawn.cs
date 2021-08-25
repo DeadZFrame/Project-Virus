@@ -83,8 +83,8 @@ public class random_spawn : MonoBehaviour
         {
             Vector3 position = new Vector3(randomX, 100, randomZ);
             Instantiate(tornado, position, Quaternion.identity);
-            randomX = Random.Range(-distanceIndex, distanceIndex) + transform.position.x;
-            randomZ = Random.Range(-distanceIndex, distanceIndex) + transform.position.z;
+            randomX = Random.Range(-distanceIndex, distanceIndex) + tornado.transform.position.x;
+            randomZ = Random.Range(-distanceIndex, distanceIndex) + tornado.transform.position.z;
             spawned++;
         }
     }

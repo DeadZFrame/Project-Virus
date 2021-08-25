@@ -843,11 +843,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motorForce: 1000
-  breakForce: 2000
+  breakForce: 4000
   maxSteerAngle: 20
   FrontWheel: {fileID: 1178880349222805371}
   RearWheel: {fileID: 8559576294118787451}
   handleBar: {fileID: 4947782478945805061}
+  gfx: {fileID: 5782635490525940940}
   frontRight: {fileID: 2846115810297948236}
   frontLeft: {fileID: 2846115811820873601}
   rearRight: {fileID: 2846115811079496445}
