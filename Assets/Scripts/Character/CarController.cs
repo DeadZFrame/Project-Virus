@@ -59,7 +59,7 @@ public class CarController : MonoBehaviour
         var speed = (posNow - prevPos) / Time.fixedDeltaTime;
         prevPos = posNow;
 
-        speedval = speed.magnitude * 4;
+        speedval = speed.magnitude;
         referanced_speed_val = speedval;
     }
 
