@@ -656,18 +656,6 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2309117043357071147, guid: 5abb7501606f97a42ade14187940450e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2309117043357071147, guid: 5abb7501606f97a42ade14187940450e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2309117043357071147, guid: 5abb7501606f97a42ade14187940450e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2309117043357071147, guid: 5abb7501606f97a42ade14187940450e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -281.39178
       objectReference: {fileID: 0}
@@ -695,45 +683,13 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2309117043357071147, guid: 5abb7501606f97a42ade14187940450e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2309117043357071147, guid: 5abb7501606f97a42ade14187940450e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 2309117043357071147, guid: 5abb7501606f97a42ade14187940450e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2617655160891560873, guid: 5abb7501606f97a42ade14187940450e, type: 3}
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 2846583697422364912, guid: 5abb7501606f97a42ade14187940450e, type: 3}
-      propertyPath: m_Constraints
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2846583697422364913, guid: 5abb7501606f97a42ade14187940450e, type: 3}
-      propertyPath: breakForce
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 2846583697422364913, guid: 5abb7501606f97a42ade14187940450e, type: 3}
-      propertyPath: motorForce
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2846583697422364913, guid: 5abb7501606f97a42ade14187940450e, type: 3}
-      propertyPath: maxSteerAngle
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 3116615306687638929, guid: 5abb7501606f97a42ade14187940450e, type: 3}
       propertyPath: m_Name
       value: NissanR35
-      objectReference: {fileID: 0}
-    - target: {fileID: 3116615306687638929, guid: 5abb7501606f97a42ade14187940450e, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3159944142133976117, guid: 5abb7501606f97a42ade14187940450e, type: 3}
       propertyPath: m_Layer
@@ -979,6 +935,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4310840514906369688, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -850
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310840514906369688, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 450
+      objectReference: {fileID: 0}
     - target: {fileID: 4310840515022797370, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -1071,14 +1035,6 @@ PrefabInstance:
       propertyPath: car
       value: 
       objectReference: {fileID: 1537795525}
-    - target: {fileID: 4310840515238901343, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
-      propertyPath: speedometerOffset.x
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 4310840515238901343, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
-      propertyPath: speedometerOffset.y
-      value: -100
-      objectReference: {fileID: 0}
     - target: {fileID: 4310840515464108342, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
       propertyPath: m_IsActive
       value: 0

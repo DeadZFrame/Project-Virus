@@ -423,11 +423,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2837607921e36047aaaef5e7b43060b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  motorcycle: {fileID: 0}
   car: {fileID: 0}
   speedometer: {fileID: 4310840515547025435}
   healthBar: {fileID: 4310840514906369695}
-  speedometerOffset: {x: 0, y: 0, z: 0}
-  velocity: {x: 0, y: 0, z: 0}
+  speedometerOffset: {x: 0, y: -50, z: 0}
 --- !u!1 &4310840515257359816
 GameObject:
   m_ObjectHideFlags: 0

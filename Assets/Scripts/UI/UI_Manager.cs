@@ -48,7 +48,7 @@ public class UI_Manager : MonoBehaviour
 
             speedometer.gameObject.transform.position = smoothToPos;
         }
-        if (scene.name.Equals("2012_Level1"))
+        if (scene.name.Equals("2012-Level1"))
         {
             if (car.speedval > 0)
                 speedometer.text = (car.speedval * 4).ToString("f1") + "km/h";
