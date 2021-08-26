@@ -22,6 +22,10 @@ public class random_spawn : MonoBehaviour
     public float object_lengt;
 
     public Vector2 vertical_randomnes = new Vector2(1, 5);
+
+    private List<GameObject> generatable_roads = new List<GameObject>();
+    //private List<GameObject> object_to_add = new List<GameObject>();
+    private int choosed_index = -1;
     //the direction where to spawn the obstacles
     //public Vector3 spawn_direction = Vector3.right;
 
@@ -29,6 +33,11 @@ public class random_spawn : MonoBehaviour
 
     private void Awake()
     {
+        /*for (int i = 0; i < roads.Length; i++)
+        {
+            generatable_roads.Add(roads[i]);
+        }*/
+
         scene = SceneManager.GetActiveScene();
         if (scene.name.Equals("2012-Level1")) //String is temporary
         {
@@ -59,10 +68,15 @@ public class random_spawn : MonoBehaviour
     }
     private void Generate_road(Vector3 start_point, Vector3 end_point, float length)
     {
-        for(float i = start_point.x; i < end_point.x; i += length)
+        for (float i = start_point.x, z = 0; i < end_point.x; i += length, z++)
         {
-            GameObject random_object = get_random_object(roads);
+            //it keep from to instantiate two times the same object
+            //Debug.Log(generatable_roads.Count);
+           
+            GameObject random_object = getrandom_road();
             GameObject instantiate_object = Instantiate(random_object, new Vector3(i, start_point.y, start_point.z), Quaternion.identity);
+            //add_removed_object();
+            //generatable_roads.Remove(object_to_add[0]);
             //instantiate_object.SetActive(false);
         }
     }
@@ -72,6 +86,43 @@ public class random_spawn : MonoBehaviour
         int rand = Random.Range(0, Objects.Length);
         return Objects[rand];
     }
+
+    private GameObject getrandom_road()
+    {
+        if(roads.Length > 1)
+        {
+            int rand = Random.Range(0, roads.Length);
+            while (choosed_index == rand)
+            {
+                rand = Random.Range(0, roads.Length);
+            }
+            choosed_index = rand;
+            return roads[rand];
+        }
+        else
+        {
+            return roads[0];
+        }
+    }
+    /*private void add_removed_object()
+    {
+        for (int i = 0; i < generatable_roads.Count; i ++)
+        {
+            //Debug.Log(generatable_roads[i]);
+            if(object_to_add[0] == generatable_roads[i])
+            {
+                return;
+            }
+        }
+        
+        if(object_to_add != null)
+        {
+            Debug.Log("yes");
+            generatable_roads.Add(object_to_add[0]);
+            object_to_add.Remove(object_to_add[0]);
+            object_to_add[0] = object_to_add[1];
+        }
+    }*/
 
     public int tornadoSpawnCount, distanceIndex;
     private int spawned = 0;

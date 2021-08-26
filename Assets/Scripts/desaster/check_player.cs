@@ -23,7 +23,6 @@ public class check_player : MonoBehaviour
         }
         else if(gameObject.tag == "ground")
         {
-            Debug.Log("yes");
             object_to_set_active.SetActive(false);
         }
     }

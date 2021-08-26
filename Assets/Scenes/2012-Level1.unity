@@ -881,6 +881,14 @@ PrefabInstance:
       propertyPath: roads.Array.data[0]
       value: 
       objectReference: {fileID: 8639266724320404844, guid: dd3e05c72defd2c4683b04157d0a9d41, type: 3}
+    - target: {fileID: 2455083577208294293, guid: 1e111a1c8516bbf4b86cc75b9b780831, type: 3}
+      propertyPath: roads.Array.data[1]
+      value: 
+      objectReference: {fileID: 2322076602835097844, guid: 5f1fc8bd4286fc8438242ffeefd82273, type: 3}
+    - target: {fileID: 2455083577208294293, guid: 1e111a1c8516bbf4b86cc75b9b780831, type: 3}
+      propertyPath: roads.Array.data[2]
+      value: 
+      objectReference: {fileID: 2322076602835097844, guid: 2cbbd1609ea06b74fa64e109181f6b8c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e111a1c8516bbf4b86cc75b9b780831, type: 3}
 --- !u!1001 &3644649602090562170
