@@ -36,7 +36,6 @@ public class spawn_meteor : MonoBehaviour
         for(int i = 1; i <= randomness_intensity; i ++)
         {
             yield return new WaitForSeconds(wait_second / randomness_intensity);
-            Debug.Log(i);
             spawn_point.x = Random.Range(-width_height.x, width_height.x);
             spawn_point.z = Random.Range(-width_height.y, width_height.y);
             Instantiate(meteor, spawn_point, Quaternion.identity);
