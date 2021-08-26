@@ -48,7 +48,10 @@ public class random_spawn : MonoBehaviour
 
     private void Start()
     {
-        SpawnTornado();
+        if (scene.name.Equals("deneme") || scene.name.Equals("MotorCycleExample"))
+        {
+            SpawnTornado();
+        }
     }
 
     private void Genereate_desaster(Vector3 start_point, Vector3 end_point, Vector2 randomness)
@@ -130,17 +133,16 @@ public class random_spawn : MonoBehaviour
     {
         float randomX = 0;
         float randomZ = 0;
+        float height = 500;
 
-        //while (spawned <= tornadoSpawnCount)
+        while (spawned <= tornadoSpawnCount)
         {
-            Vector3 position = new Vector3(randomX, 100, randomZ);
-            if(scene.name.Equals("deneme") || scene.name.Equals("MotorCycleExample"))
-            {
-                Instantiate(tornado, position, Quaternion.identity);
-                randomX = Random.Range(-distanceIndex, distanceIndex) + tornado.transform.position.x;
-                randomZ = Random.Range(-distanceIndex, distanceIndex) + tornado.transform.position.z;
-                spawned++;
-            }
+            Vector3 position = new Vector3(randomX, height, randomZ);
+
+            Instantiate(tornado, position, Quaternion.identity);
+            randomX = Random.Range(-distanceIndex, distanceIndex) + transform.position.x;
+            randomZ = Random.Range(-distanceIndex, distanceIndex) + transform.position.z;
+            spawned++;
         }
     }
 }
