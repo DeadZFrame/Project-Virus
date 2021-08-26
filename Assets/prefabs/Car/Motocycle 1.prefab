@@ -778,7 +778,7 @@ GameObject:
   - component: {fileID: 2846115812051110173}
   - component: {fileID: 2846115812051110176}
   - component: {fileID: 1967595409485086733}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Motocycle 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -794,14 +794,14 @@ Transform:
   m_GameObject: {fileID: 3151964012084710551}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.10346055, y: 0.36270118, z: 480.34964}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 0.06}
   m_Children:
   - {fileID: 5782635490525940940}
   - {fileID: 2846115811882053682}
   - {fileID: 1701309571}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!54 &2846115812051110175
 Rigidbody:
   m_ObjectHideFlags: 0
