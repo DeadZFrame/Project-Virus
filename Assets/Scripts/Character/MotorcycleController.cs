@@ -14,7 +14,7 @@ public class MotorcycleController : MonoBehaviour
     private bool isBreaking;
 
     private bool onTopSpeed, applyFriction;
-    private float friction = 500, currentFriction;
+    private float friction = 0, currentFriction;
     private float topSpeedBreak = 5000, currentTopSpeedBreak;
 
     public float motorForce;
