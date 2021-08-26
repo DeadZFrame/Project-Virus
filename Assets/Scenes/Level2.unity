@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414736, b: 0.12107852, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -351,7 +351,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 806241603}
   m_LocalRotation: {x: 0.0805346, y: 0.742516, z: -0.09077609, w: 0.6587442}
-  m_LocalPosition: {x: -3.5453963, y: 0.8000216, z: 479.82422}
+  m_LocalPosition: {x: -3.5453963, y: 0.47, z: 479.82422}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -621,7 +621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2309117043357071147, guid: 5abb7501606f97a42ade14187940450e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.000021576881
+      value: -0.33
       objectReference: {fileID: 0}
     - target: {fileID: 2309117043357071147, guid: 5abb7501606f97a42ade14187940450e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -666,6 +666,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2309117043357071147, guid: 5abb7501606f97a42ade14187940450e, type: 3}
   m_PrefabInstance: {fileID: 1894902543}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2116175705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2116175706}
+  m_Layer: 0
+  m_Name: scenemanager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2116175706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116175705}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.73264027, y: 0.4258603, z: 478.61993}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2117681646
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,7 +826,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3538742467536844672, guid: 3ca2c02dee8ee2d45aa67e186188385e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8000216
+      value: 0.47
       objectReference: {fileID: 0}
     - target: {fileID: 3538742467536844672, guid: 3ca2c02dee8ee2d45aa67e186188385e, type: 3}
       propertyPath: m_LocalPosition.z
