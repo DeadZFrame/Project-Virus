@@ -5,15 +5,21 @@ using UnityEngine;
 //Contains player info
 public class PlayerBase: MonoBehaviour
 {
+    CameraShake cameraShake;
+
     [System.NonSerialized] public static PlayerBase referance;
     public static float health = 100;
     private float temp;
 
-    private bool hit = false;
+    private bool hit = false;   
+
+    private void Awake()
+    {
+        cameraShake = FindObjectOfType<CameraShake>();
+    }
 
     private void Update()
     {
-
         OnHit();
     }
 
@@ -25,6 +31,7 @@ public class PlayerBase: MonoBehaviour
             Debug.Log("Çat!");
             hit = true;
             temp = health - 20;
+            StartCoroutine(cameraShake.CamShake(20, 0.5f));
         }
     }
 
