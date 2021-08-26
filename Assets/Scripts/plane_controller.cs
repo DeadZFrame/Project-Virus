@@ -259,12 +259,24 @@ public class plane_controller : MonoBehaviour
         //acceleration.y += axe.y * 500 * Time.fixedDeltaTime;
 
         //limit_acceleration();
-
-        Vector3 difference = passed_rotation * 90 - new Vector3(rotation_referance.rotation.eulerAngles.x, rotation_referance.rotation.eulerAngles.y, rotation_referance.rotation.eulerAngles.z);
-        difference = difference.normalized;
-        rotation_referance.Rotate(difference * Time.deltaTime * 40);
-        Debug.Log(rotation_referance.localEulerAngles);
-        if(Vector3.Distance(difference, Vector3.zero) < 0.1)
+        Vector3 real_rotation = new Vector3(rotation_referance.rotation.eulerAngles.x, rotation_referance.rotation.eulerAngles.y, rotation_referance.rotation.eulerAngles.z);
+        if(real_rotation.x > 180)
+        {
+            real_rotation.x -= 360; 
+        }
+        if (real_rotation.y > 180)
+        {
+            real_rotation.y -= 360;
+        }
+        if (real_rotation.z > 180)
+        {
+            real_rotation.z -= 360;
+        }
+        Vector3 difference = passed_rotation - real_rotation;
+        Debug.Log(Vector3.Distance(difference, Vector3.zero));
+        rotation_referance.Rotate(difference * Time.deltaTime);
+        
+        if(Vector3.Distance(difference, Vector3.zero) < 10)
         {
             in_area = true;
         }
