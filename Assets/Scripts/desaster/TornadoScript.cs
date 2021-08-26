@@ -45,7 +45,7 @@ public class TornadoScript : MonoBehaviour
         float smoothTransitionX = Mathf.Lerp(transform.position.x, transform.position.x + x, 0.02f);
         float smoothTransiitionZ = Mathf.Lerp(transform.position.z, transform.position.z + z, 0.02f);
 
-        chaosPos = new Vector3(smoothTransitionX, 20, smoothTransiitionZ);
+        chaosPos = new Vector3(smoothTransitionX, 1000, smoothTransiitionZ);
 
         transform.position = chaosPos;
     }
