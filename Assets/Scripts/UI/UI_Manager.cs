@@ -39,22 +39,22 @@ public class UI_Manager : MonoBehaviour
     {
         if (scene.name.Equals("MotorCycleExample"))
         {
-            if (motorcycle.speedval > 0)
-                speedometer.text = (motorcycle.speedval * 4).ToString("f1") + "km/h";
-            else speedometer.text = (motorcycle.speedval * 4).ToString("f1") + "km/h";
+            if (car.speedval > 0)
+                speedometer.text = (car.speedval * 4).ToString("f1") + "km/h";
+            else speedometer.text = (car.speedval * 4).ToString("f1") + "km/h";
 
-            Vector3 motoPos = Camera.main.WorldToScreenPoint(motorcycle.transform.position) + speedometerOffset;
+            Vector3 motoPos = Camera.main.WorldToScreenPoint(car.transform.position) + speedometerOffset;
             Vector3 smoothToPos = Vector3.SmoothDamp(speedometer.gameObject.transform.position, motoPos, ref velocity, 0.15f);
 
             speedometer.gameObject.transform.position = smoothToPos;
         }
         if (scene.name.Equals("2012-Level1"))
         {
-            if (car.speedval > 0)
-                speedometer.text = (car.speedval).ToString("f1") + "km/h";
-            else speedometer.text = (car.speedval).ToString("f1") + "km/h";
+            if (motorcycle.speedval > 0)
+                speedometer.text = (motorcycle.speedval).ToString("f1") + "km/h";
+            else speedometer.text = (motorcycle.speedval).ToString("f1") + "km/h";
 
-            Vector3 carPos = Camera.main.WorldToScreenPoint(car.transform.position) + speedometerOffset;
+            Vector3 carPos = Camera.main.WorldToScreenPoint(motorcycle.transform.position) + speedometerOffset;
             Vector3 smoothToPos = Vector3.SmoothDamp(speedometer.gameObject.transform.position, carPos, ref velocity, 0.15f);
 
             speedometer.gameObject.transform.position = smoothToPos;

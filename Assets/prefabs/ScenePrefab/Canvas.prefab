@@ -110,7 +110,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -626, y: 251}
+  m_AnchoredPosition: {x: -850, y: 450}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &4310840514906369695
@@ -427,7 +427,7 @@ MonoBehaviour:
   car: {fileID: 0}
   speedometer: {fileID: 4310840515547025435}
   healthBar: {fileID: 4310840514906369695}
-  speedometerOffset: {x: 0, y: -50, z: 0}
+  speedometerOffset: {x: 200, y: 100, z: 0}
 --- !u!1 &4310840515257359816
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,7 +518,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4310840515464108341
 RectTransform:
   m_ObjectHideFlags: 0
