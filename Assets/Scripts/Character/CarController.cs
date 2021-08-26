@@ -16,7 +16,6 @@ public class CarController : MonoBehaviour
     [SerializeField] private float motorForce;
     [SerializeField] private float breakForce;
     [SerializeField] private float maxSteerAngle;
-    public float topSpeed;
 
     private bool onTopSpeed, applyFriction;
     private float friction = 500, currentFriction;
@@ -61,7 +60,6 @@ public class CarController : MonoBehaviour
         prevPos = posNow;
 
         speedval = speed.magnitude;
-        speedval = speedval * 4;
         referanced_speed_val = speedval;
     }
 
@@ -84,7 +82,7 @@ public class CarController : MonoBehaviour
         }
         else applyFriction = false;
 
-        if (speedval > topSpeed)
+        if (speedval > 20f)
         {
             onTopSpeed = true;
         }
