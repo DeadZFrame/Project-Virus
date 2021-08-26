@@ -508,7 +508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1357302856
 Light:
   m_ObjectHideFlags: 0
@@ -521,7 +521,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -854,6 +854,10 @@ PrefabInstance:
       value: -230
       objectReference: {fileID: 0}
     - target: {fileID: 2455083577208294293, guid: 1e111a1c8516bbf4b86cc75b9b780831, type: 3}
+      propertyPath: horizantal_width
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2455083577208294293, guid: 1e111a1c8516bbf4b86cc75b9b780831, type: 3}
       propertyPath: roads.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -869,6 +873,14 @@ PrefabInstance:
       propertyPath: roads.Array.data[2]
       value: 
       objectReference: {fileID: 2322076602835097844, guid: 2cbbd1609ea06b74fa64e109181f6b8c, type: 3}
+    - target: {fileID: 2455083577208294293, guid: 1e111a1c8516bbf4b86cc75b9b780831, type: 3}
+      propertyPath: vertical_randomnes.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2455083577208294293, guid: 1e111a1c8516bbf4b86cc75b9b780831, type: 3}
+      propertyPath: vertical_randomnes.y
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e111a1c8516bbf4b86cc75b9b780831, type: 3}
 --- !u!1001 &3644649602090562170
