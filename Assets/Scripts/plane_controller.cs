@@ -23,6 +23,8 @@ public class plane_controller : MonoBehaviour
     private Vector3 rot; //rotation
     private Vector3 Global_rotation;
 
+    //checks if the plane is in the area
+    public static bool in_area = true;
     private void Awake()
     {
         tmp_acceleration = acceleration;

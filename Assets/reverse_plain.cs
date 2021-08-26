@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class reverse_plain : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //contains the information of reversed plane
+    public Vector3 reversed_direction;
 }
