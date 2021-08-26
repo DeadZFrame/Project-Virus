@@ -13,12 +13,13 @@ public class CarController : MonoBehaviour
     private float currentbreakForce;
     private bool isBreaking;
 
-    [SerializeField] private float motorForce;
-    [SerializeField] private float breakForce;
-    [SerializeField] private float maxSteerAngle;
+    public float motorForce;
+    public float breakForce;
+    public float maxSteerAngle;
+    public float topSpeed;
 
     private bool onTopSpeed, applyFriction;
-    private float friction = 500, currentFriction;
+    private float friction = 250, currentFriction;
     private float topSpeedBreak = 5000, currentTopSpeedBreak;
 
     [SerializeField] private WheelCollider frontLeftWheelCollider;
@@ -82,7 +83,7 @@ public class CarController : MonoBehaviour
         }
         else applyFriction = false;
 
-        if (speedval > 20f)
+        if (speedval > topSpeed)
         {
             onTopSpeed = true;
         }

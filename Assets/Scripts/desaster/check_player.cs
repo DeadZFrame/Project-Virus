@@ -10,10 +10,10 @@ public class check_player : MonoBehaviour
 
     public float radius = 5f;
 
-    private Rigidbody car_rb;
+    private Rigidbody moto_rb;
     private void Awake()
     {
-        car_rb = GameObject.Find("NissanR35").GetComponent<Rigidbody>();
+        moto_rb = GameObject.Find("Motocycle 1").GetComponent<Rigidbody>();
     }
     private void Update()
     {
@@ -25,6 +25,7 @@ public class check_player : MonoBehaviour
         }
         
     }
+
     void check(GameObject object_to_set_active)
     {
         if(Physics.CheckSphere(transform.position, radius, layerMask))
@@ -39,6 +40,6 @@ public class check_player : MonoBehaviour
     }
     void proprtion_radius_to_car_speed()
     {
-        radius = car_rb.velocity.x * 2;
+        radius = moto_rb.velocity.x * 2;
     }
 }
