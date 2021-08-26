@@ -25,6 +25,8 @@ public class plane_controller : MonoBehaviour
 
     //checks if the plane is in the area
     public static bool in_area = true;
+
+    private Vector3 passed_rotation;
     private void Awake()
     {
         tmp_acceleration = acceleration;
@@ -44,8 +46,16 @@ public class plane_controller : MonoBehaviour
     public void Move()
     {
         increase_velocity();
-        rotate_and_move_plane();
-        rotate_vertically();
+        if (in_area)
+        {
+            rotate_and_move_plane();
+            rotate_vertically();
+        }
+        else
+        {
+            passing_border();
+        }
+        
         direction = velocity * Time.fixedDeltaTime;
     }
     public void get_input()
@@ -55,28 +65,7 @@ public class plane_controller : MonoBehaviour
     }
     public void increase_velocity()
     {
-        //change acceleration
-        //change the z value
-        //float axe_y = get_y_value(transform.rotation.z);
-        Vector3 axe = check_direction.direction;
-        //Debug.Log(tmp_acceleration.y);
-        acceleration.x += axe.x * 100000 * Time.fixedDeltaTime;
-        acceleration.z += axe.z * 100000 * Time.fixedDeltaTime;
-        acceleration.y += axe.y * 5000 * Time.fixedDeltaTime;
-
-        limit_acceleration();
-        //Debug.Log(velocity.y);
-        //Debug.Log(acceleration.y);
-        //forward
-        //acceleration.x = Mathf.Clamp(tmp_acceleration.x, -10, 10);
-        //up and down
-        //acceleration.y = Mathf.Clamp(tmp_acceleration.y, -10, 10);
-        //Mathf.Clamp(tmp_acceleration.y + axe.y * 50 * Time.deltaTime, -15, 15)
-        //right left
-        //acceleration.z = Mathf.Clamp(tmp_acceleration.z, -10, 10);
-        //tmp_acceleration = Vector3.zero;
-        //Debug.Log(axe);
-        //Debug.Log(acceleration);
+        set_acceleration();
 
         //change velocity
         if (Mathf.Abs(velocity.x) < max_speed)
@@ -119,45 +108,74 @@ public class plane_controller : MonoBehaviour
             velocity.y += acceleration.y;
         }
     }
+    public void set_acceleration()
+    {
+        //change acceleration
+        //change the z value
+        //float axe_y = get_y_value(transform.rotation.z);
+        Vector3 axe = check_direction.direction;
+        //Debug.Log(tmp_acceleration.y);
+        acceleration.x += axe.x * 100000 * Time.fixedDeltaTime;
+        acceleration.z += axe.z * 100000 * Time.fixedDeltaTime;
+        acceleration.y += axe.y * 5000 * Time.fixedDeltaTime;
+
+        limit_acceleration();
+        //Debug.Log(velocity.y);
+        //Debug.Log(acceleration.y);
+        //forward
+        //acceleration.x = Mathf.Clamp(tmp_acceleration.x, -10, 10);
+        //up and down
+        //acceleration.y = Mathf.Clamp(tmp_acceleration.y, -10, 10);
+        //Mathf.Clamp(tmp_acceleration.y + axe.y * 50 * Time.deltaTime, -15, 15)
+        //right left
+        //acceleration.z = Mathf.Clamp(tmp_acceleration.z, -10, 10);
+        //tmp_acceleration = Vector3.zero;
+        //Debug.Log(axe);
+        //Debug.Log(acceleration);
+    }
     public void rotate_and_move_plane()
     {
         Vector3 delta_rotation = rot * rotation_speed * Time.fixedDeltaTime;
         rotation_referance.Rotate(delta_rotation);
-        //this part is for left and right
-        if(Horizantol_input == 1)
+        if(in_area)
         {
-            //to right
-            //acceleration.y -= Time.fixedDeltaTime;
-            rot.x -= Time.fixedDeltaTime;
-        }
-        else if(Horizantol_input == -1)
-        {
-            //to left
-            //acceleration.y += Time.fixedDeltaTime;
-            rot.x += Time.fixedDeltaTime;
-        }
-        else if(Horizantol_input == 0)
-        {
-            rot.x = Mathf.Lerp(rot.x, 0, 0.03f);
-        }
-        //this part is for up and down
-        if (Vertical_input == 1)
-        {
-            //to down
-            rot.z -= Time.fixedDeltaTime;
-        }
-        else if (Vertical_input == -1)
-        {
-            //to up
-            rot.z += Time.fixedDeltaTime;
-        }
-        else if (Vertical_input == 0)
-        {
-            rot.z = Mathf.Lerp(rot.z, 0, 0.03f);
+            //this part is for left and right
+            if (Horizantol_input == 1)
+            {
+                //to right
+                //acceleration.y -= Time.fixedDeltaTime;
+                rot.x -= Time.fixedDeltaTime;
+            }
+            else if (Horizantol_input == -1)
+            {
+                //to left
+                //acceleration.y += Time.fixedDeltaTime;
+                rot.x += Time.fixedDeltaTime;
+            }
+            else if (Horizantol_input == 0)
+            {
+                rot.x = Mathf.Lerp(rot.x, 0, 0.03f);
+            }
+            //this part is for up and down
+            if (Vertical_input == 1)
+            {
+                //to down
+                rot.z -= Time.fixedDeltaTime;
+            }
+            else if (Vertical_input == -1)
+            {
+                //to up
+                rot.z += Time.fixedDeltaTime;
+            }
+            else if (Vertical_input == 0)
+            {
+                rot.z = Mathf.Lerp(rot.z, 0, 0.03f);
+            }
         }
     }
     public void rotate_vertically()
     {
+        
         Vector3 delta_rotation = Global_rotation * Time.fixedDeltaTime;
         rotation_referance.Rotate(delta_rotation);
         //Debug.Log(rotation_referance.rotation.x);
@@ -224,5 +242,33 @@ public class plane_controller : MonoBehaviour
         {
             return -90;
         }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "border")
+        {
+            in_area = false;
+            passed_rotation = other.gameObject.GetComponent<reverse_plain>().reversed_direction;
+        }
+    }
+    private void passing_border()
+    {
+        //acceleration.x += axe.x * 1000 * Time.fixedDeltaTime;
+        //acceleration.z += axe.z * 1000 * Time.fixedDeltaTime;
+        //acceleration.y += axe.y * 500 * Time.fixedDeltaTime;
+
+        //limit_acceleration();
+
+        Vector3 difference = passed_rotation * 90 - new Vector3(rotation_referance.rotation.eulerAngles.x, rotation_referance.rotation.eulerAngles.y, rotation_referance.rotation.eulerAngles.z);
+        difference = difference.normalized;
+        rotation_referance.Rotate(difference * Time.deltaTime * 40);
+        Debug.Log(rotation_referance.localEulerAngles);
+        if(Vector3.Distance(difference, Vector3.zero) < 0.1)
+        {
+            in_area = true;
+        }
+
+        //rotation_referance.Rotate(axe * 90);
     }
 }

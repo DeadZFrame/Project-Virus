@@ -859,7 +859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2455083577208294293, guid: 1e111a1c8516bbf4b86cc75b9b780831, type: 3}
       propertyPath: horizantal_width
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2455083577208294293, guid: 1e111a1c8516bbf4b86cc75b9b780831, type: 3}
       propertyPath: roads.Array.size
