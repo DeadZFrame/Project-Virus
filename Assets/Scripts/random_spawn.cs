@@ -80,7 +80,7 @@ public class random_spawn : MonoBehaviour
             GameObject instantiate_object = Instantiate(random_object, new Vector3(i, start_point.y, start_point.z), Quaternion.identity);
             //add_removed_object();
             //generatable_roads.Remove(object_to_add[0]);
-            //instantiate_object.SetActive(false);
+            instantiate_object.SetActive(false);
         }
     }
 
