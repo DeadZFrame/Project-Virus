@@ -48,7 +48,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   object_to_set_active: {fileID: 5830127059782922575}
-  radius: 30
+  radius: 15
 --- !u!1 &5830127059782922575
 GameObject:
   m_ObjectHideFlags: 0
