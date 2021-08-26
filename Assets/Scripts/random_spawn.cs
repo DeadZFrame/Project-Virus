@@ -17,7 +17,7 @@ public class random_spawn : MonoBehaviour
     public Vector3 end_point;
 
     //for the horizantol distance between spawned object
-    public int horizantal_width = 10;
+    public float horizantal_width = 10;
 
     public float object_lengt;
 
@@ -62,7 +62,7 @@ public class random_spawn : MonoBehaviour
 
         for (float i = start_point.x + rand_vertical; i < end_point.x; i += rand_vertical)
         {
-            float rand_horizontal = Random.Range(-2f, 2f);
+            float rand_horizontal = Random.Range(-1f, 1f);
             rand_horizontal = rand_horizontal * horizantal_width;
             GameObject random_object = get_random_object(objects);
             Instantiate(random_object, new Vector3(i, random_object.transform.position.y, player.transform.position.z + rand_horizontal), Quaternion.identity);

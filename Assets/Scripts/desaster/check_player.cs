@@ -10,9 +10,16 @@ public class check_player : MonoBehaviour
 
     public float radius = 5f;
 
+    public CarController car;
     private void Update()
     {
         check(object_to_set_active);
+        //if the object is a thunder object
+        if(object_to_set_active.name == "identificier gfx")
+        {
+            proprtion_radius_to_car_speed();
+        }
+        
     }
     void check(GameObject object_to_set_active)
     {
@@ -25,5 +32,11 @@ public class check_player : MonoBehaviour
         {
             object_to_set_active.SetActive(false);
         }
+    }
+    void proprtion_radius_to_car_speed()
+    {
+        
+        Debug.Log(radius);
+        radius = CarController.referanced_speed_val/2.5f;
     }
 }

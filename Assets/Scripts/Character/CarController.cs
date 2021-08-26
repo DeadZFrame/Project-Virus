@@ -33,7 +33,12 @@ public class CarController : MonoBehaviour
 
     private Vector3 prevPos = new Vector3();
     [System.NonSerialized] public float speedval = 0;
+    public static float referanced_speed_val;
 
+    private void Awake()
+    {
+        referanced_speed_val = speedval;
+    }
     private void FixedUpdate()
     {
         GetInput();
@@ -54,7 +59,8 @@ public class CarController : MonoBehaviour
         var speed = (posNow - prevPos) / Time.fixedDeltaTime;
         prevPos = posNow;
 
-        speedval = speed.magnitude;
+        speedval = speed.magnitude * 4;
+        referanced_speed_val = speedval;
     }
 
     private void GetInput()
@@ -76,7 +82,7 @@ public class CarController : MonoBehaviour
         }
         else applyFriction = false;
 
-        if (speedval > 35f)
+        if (speedval > 20f)
         {
             onTopSpeed = true;
         }
