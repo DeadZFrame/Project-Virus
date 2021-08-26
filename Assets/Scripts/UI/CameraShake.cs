@@ -10,7 +10,6 @@ public class CameraShake : MonoBehaviour
     {
         virtualCamera = gameObject.GetComponent<CinemachineVirtualCamera>();
         noise = virtualCamera.GetComponent<CinemachineBasicMultiChannelPerlin>();
-        
     }
 
     private void Start()

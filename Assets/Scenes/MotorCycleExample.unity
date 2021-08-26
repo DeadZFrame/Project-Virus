@@ -305,17 +305,6 @@ MonoBehaviour:
   m_AmplitudeGain: 0
   m_FrequencyGain: 0
   mNoiseOffsets: {x: 1.6273193, y: -802.155, z: -919.13086}
---- !u!114 &797788454 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3538742467536844687, guid: 3ca2c02dee8ee2d45aa67e186188385e, type: 3}
-  m_PrefabInstance: {fileID: 717014929764925992}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &806241603
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,10 +750,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 330025451417018304, guid: 3ca2c02dee8ee2d45aa67e186188385e, type: 3}
-      propertyPath: virtualCamera
-      value: 
-      objectReference: {fileID: 797788454}
     - target: {fileID: 3538742467536844672, guid: 3ca2c02dee8ee2d45aa67e186188385e, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -876,7 +861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2846115812051110176, guid: f17ea78a41f1f04498874aee8251db0f, type: 3}
       propertyPath: topSpeed
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3151964012084710551, guid: f17ea78a41f1f04498874aee8251db0f, type: 3}
       propertyPath: m_Name

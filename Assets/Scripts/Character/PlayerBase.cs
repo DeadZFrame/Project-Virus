@@ -22,7 +22,7 @@ public class PlayerBase: MonoBehaviour
         if (other.tag.Equals("Obstacle")) //Player takes damage when entering to the obstacle trigger
         {
             health -= 20;
-            Debug.Log("cat!");
+            Debug.Log("Çat!");
             hit = true;
             temp = health - 20;
         }
