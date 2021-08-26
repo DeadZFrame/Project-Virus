@@ -687,6 +687,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2846583697422364913, guid: 5abb7501606f97a42ade14187940450e, type: 3}
+      propertyPath: topSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3116615306687638929, guid: 5abb7501606f97a42ade14187940450e, type: 3}
       propertyPath: m_Name
       value: NissanR35

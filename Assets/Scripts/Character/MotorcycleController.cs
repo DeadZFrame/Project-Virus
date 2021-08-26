@@ -20,6 +20,7 @@ public class MotorcycleController : MonoBehaviour
     public float motorForce;
     public float breakForce;
     public float maxSteerAngle;
+    public float topSpeed;
 
     public Transform FrontWheel, RearWheel, handleBar , gfx;
     public Transform frontRight, frontLeft, rearRight, rearLeft;
@@ -65,7 +66,7 @@ public class MotorcycleController : MonoBehaviour
         }
         else applyFriction = false;
 
-        if (speedval > 35f)
+        if (speedval > topSpeed)
         {
             onTopSpeed = true;
         }
