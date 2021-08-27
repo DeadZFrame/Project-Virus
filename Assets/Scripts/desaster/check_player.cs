@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class check_player : MonoBehaviour
 {
@@ -13,7 +14,15 @@ public class check_player : MonoBehaviour
     private Rigidbody moto_rb;
     private void Awake()
     {
-        moto_rb = GameObject.Find("Motocycle 1").GetComponent<Rigidbody>();
+        Scene scene = SceneManager.GetActiveScene();
+        if(scene.name == "2012-Level1")
+        {
+            moto_rb = GameObject.Find("Motocycle 1").GetComponent<Rigidbody>();
+        }
+        else if(scene.name == "car_scene")
+        {
+            moto_rb = GameObject.Find("NissanR35").GetComponent<Rigidbody>();
+        }
     }
     private void Update()
     {

@@ -39,11 +39,9 @@ public class random_spawn : MonoBehaviour
         }*/
 
         scene = SceneManager.GetActiveScene();
-        if (scene.name.Equals("2012-Level1")) //String is temporary
-        {
-            Genereate_desaster(player.transform.position, end_point, vertical_randomnes);
-            Generate_road(start_point, end_point, object_lengt);
-        }
+
+        Genereate_desaster(player.transform.position, end_point, vertical_randomnes);
+        Generate_road(start_point, end_point, object_lengt);
     }
 
     private void Start()

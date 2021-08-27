@@ -273,7 +273,6 @@ public class plane_controller : MonoBehaviour
             real_rotation.z -= 360;
         }
         Vector3 difference = passed_rotation - real_rotation;
-        Debug.Log(Vector3.Distance(difference, Vector3.zero));
         rotation_referance.Rotate(difference * Time.deltaTime);
         
         if(Vector3.Distance(difference, Vector3.zero) < 10)
