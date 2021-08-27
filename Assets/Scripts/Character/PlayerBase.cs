@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //Contains player info
 public class PlayerBase: MonoBehaviour
@@ -16,11 +17,17 @@ public class PlayerBase: MonoBehaviour
     private void Awake()
     {
         cameraShake = FindObjectOfType<CameraShake>();
+        health = 100;
     }
 
     private void Update()
     {
         OnHit();
+
+        if(health <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

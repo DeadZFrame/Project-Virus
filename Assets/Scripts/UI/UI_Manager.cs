@@ -34,7 +34,10 @@ public class UI_Manager : MonoBehaviour
     {
         Speedometer();
         HealthBar();
-        time_decrease();
+        if(scene.name == "car_scene")
+        {
+            time_decrease();
+        }
     }
 
     public void HealthBar()
