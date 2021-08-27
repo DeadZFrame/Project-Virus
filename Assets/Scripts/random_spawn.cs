@@ -39,14 +39,16 @@ public class random_spawn : MonoBehaviour
         }*/
 
         scene = SceneManager.GetActiveScene();
-
-        Genereate_desaster(player.transform.position, end_point, vertical_randomnes);
-        Generate_road(start_point, end_point, object_lengt);
+        if(scene.name == "car_scene" || scene.name == "2012-Level2")
+        {
+            Genereate_desaster(player.transform.position, end_point, vertical_randomnes);
+            Generate_road(start_point, end_point, object_lengt);
+        }
     }
 
     private void Start()
     {
-        if (scene.name.Equals("deneme") || scene.name.Equals("MotorCycleExample"))
+        if (scene.name.Equals("deneme"))
         {
             SpawnTornado();
         }
