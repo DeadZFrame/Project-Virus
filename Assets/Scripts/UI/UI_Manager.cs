@@ -95,6 +95,9 @@ public class UI_Manager : MonoBehaviour
     public void time_decrease()
     {
         int time = (int)time_manager.current_time;
-        time_txt.text = time.ToString();
+        if (time >= 0)
+        {
+            time_txt.text = time.ToString();
+        }
     }
 }
