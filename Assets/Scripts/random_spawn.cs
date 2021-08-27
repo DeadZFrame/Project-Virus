@@ -39,7 +39,7 @@ public class random_spawn : MonoBehaviour
         }*/
 
         scene = SceneManager.GetActiveScene();
-        if(scene.name == "car_scene" || scene.name == "2012-Level2")
+        if(scene.name == "car_scene" || scene.name == "2012-Level1")
         {
             Genereate_desaster(player.transform.position, end_point, vertical_randomnes);
             Generate_road(start_point, end_point, object_lengt);
