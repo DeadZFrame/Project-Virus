@@ -34,7 +34,7 @@ public class UI_Manager : MonoBehaviour
     {
         Speedometer();
         HealthBar();
-        if(scene.name == "car_scene")
+        if(SceneManager.GetActiveScene().name == "car_scene")
         {
             time_decrease();
         }

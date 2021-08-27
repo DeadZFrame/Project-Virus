@@ -726,7 +726,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &206806735
 MonoBehaviour:
@@ -980,7 +980,7 @@ Transform:
   m_Children:
   - {fileID: 1285274745}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &392005682
 GameObject:
@@ -1145,7 +1145,7 @@ GameObject:
   - component: {fileID: 418938135}
   - component: {fileID: 418938134}
   - component: {fileID: 418938136}
-  - component: {fileID: 418938137}
+  - component: {fileID: 418938138}
   m_Layer: 0
   m_Name: scene_manager
   m_TagString: Untagged
@@ -1179,7 +1179,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &418938136
 MonoBehaviour:
@@ -1198,7 +1198,7 @@ MonoBehaviour:
   y_spawn_pos: 1000
   wait_second: 1
   randomness_intensity: 50
---- !u!114 &418938137
+--- !u!114 &418938138
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1207,20 +1207,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 418938133}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecdddd73fcef6b8478d29e2e0ceaec79, type: 3}
+  m_Script: {fileID: 11500000, guid: 645b0d130ce16a249890f75972acef50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects: []
-  roads: []
-  tornado: {fileID: 6260593898981582695, guid: 2ada9af35860fed4985f8b02b6b81dad, type: 3}
-  player: {fileID: 0}
-  start_point: {x: 0, y: 0, z: 0}
-  end_point: {x: 0, y: 0, z: 0}
-  horizantal_width: 10
-  object_lengt: 0
-  vertical_randomnes: {x: 1, y: 5}
-  tornadoSpawnCount: 5
-  distanceIndex: 1000
 --- !u!1 &432353785
 GameObject:
   m_ObjectHideFlags: 0
@@ -2121,7 +2110,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &880760373
 GameObject:
@@ -2267,7 +2256,7 @@ Transform:
   - {fileID: 158371107}
   - {fileID: 886723322}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &971477920
 BoxCollider:
@@ -2310,7 +2299,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1087329578
 GameObject:
@@ -3041,7 +3030,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1409421437
 GameObject:
@@ -4265,7 +4254,7 @@ Transform:
   m_LocalScale: {x: 2355.7231, y: 1, z: 2494.458}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2121848816
 GameObject:
