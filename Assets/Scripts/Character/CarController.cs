@@ -19,7 +19,7 @@ public class CarController : MonoBehaviour
     public float topSpeed;
 
     private bool onTopSpeed, applyFriction;
-    private float friction = 250, currentFriction;
+    private float friction = 0, currentFriction;
     private float topSpeedBreak = 5000, currentTopSpeedBreak;
 
     [SerializeField] private WheelCollider frontLeftWheelCollider;
