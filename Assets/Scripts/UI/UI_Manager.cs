@@ -7,11 +7,16 @@ using UnityEngine.SceneManagement;
 
 public class UI_Manager : MonoBehaviour
 {
-    [SerializeField]private MotorcycleController motorcycle;
+    [SerializeField] private MotorcycleController motorcycle;
     [SerializeField] private CarController car;
 
     public TextMeshProUGUI speedometer;
     public Slider healthBar;
+
+    public Image wayPoint;
+    public Renderer target;
+    public GameObject leftNavAnim, RightNavAnim;
+    public Transform jetGFX;
 
     public Vector3 speedometerOffset;
     Vector3 velocity = Vector3.zero;
@@ -37,7 +42,7 @@ public class UI_Manager : MonoBehaviour
 
     public void Speedometer() //Method for showing car's speed near of it
     {
-        if (scene.name.Equals("Level2"))
+        if (scene.name == "Level2")
         {
             if (car.speedval > 0)
                 speedometer.text = (car.speedval * 4).ToString("f1") + "km/h";
@@ -48,7 +53,7 @@ public class UI_Manager : MonoBehaviour
 
             speedometer.gameObject.transform.position = smoothToPos;
         }
-        if (scene.name.Equals("2012-Level1"))
+        if (scene.name == "2012-Level1")
         {
             if (motorcycle.speedval > 0)
                 speedometer.text = (motorcycle.speedval * 40).ToString("f1") + "km/h";
@@ -58,6 +63,30 @@ public class UI_Manager : MonoBehaviour
             Vector3 smoothToPos = Vector3.SmoothDamp(speedometer.gameObject.transform.position, carPos, ref velocity, 0.15f);
 
             speedometer.gameObject.transform.position = smoothToPos;
+        }
+
+        if (scene.name == "deneme")
+        {
+            if (target.isVisible)
+            {
+                wayPoint.gameObject.SetActive(true);
+                Vector3 targetPos = Camera.main.WorldToScreenPoint(target.gameObject.transform.position);
+                wayPoint.gameObject.transform.position = targetPos;
+            }
+            else
+            {
+                wayPoint.gameObject.SetActive(false);
+                if (jetGFX.rotation.y > 10)
+                {
+                    RightNavAnim.SetActive(false);
+                    leftNavAnim.SetActive(true);
+                }
+                else if(jetGFX.rotation.y < -10)
+                {
+                    leftNavAnim.SetActive(false);
+                    RightNavAnim.SetActive(true);
+                }
+            }
         }
 
     }
