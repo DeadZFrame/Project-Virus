@@ -42,11 +42,11 @@ public class UI_Manager : MonoBehaviour
 
     public void Speedometer() //Method for showing car's speed near of it
     {
-        if (scene.name == "Level2")
+        if (scene.name == "car_scene")
         {
             if (car.speedval > 0)
-                speedometer.text = (car.speedval * 4).ToString("f1") + "km/h";
-            else speedometer.text = (car.speedval * 4).ToString("f1") + "km/h";
+                speedometer.text = (car.speedval * 40).ToString("f1") + "km/h";
+            else speedometer.text = (car.speedval * 40).ToString("f1") + "km/h";
 
             Vector3 motoPos = Camera.main.WorldToScreenPoint(car.transform.position) + speedometerOffset;
             Vector3 smoothToPos = Vector3.SmoothDamp(speedometer.gameObject.transform.position, motoPos, ref velocity, 0.15f);

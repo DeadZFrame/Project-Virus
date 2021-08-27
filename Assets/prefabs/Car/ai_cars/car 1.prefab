@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 409832947630211196}
   m_Layer: 0
   m_Name: car 1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4417143582773773619}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.3, z: 0}
+  m_LocalPosition: {x: 0, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5230659934083879620}
@@ -56,6 +56,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1235286781228885559}
     m_Modifications:
+    - target: {fileID: 688715463194285475, guid: 6d637b6383ca43541adac67dd0145873, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 719063317253806641, guid: 6d637b6383ca43541adac67dd0145873, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151247741191150905, guid: 6d637b6383ca43541adac67dd0145873, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727706189496737005, guid: 6d637b6383ca43541adac67dd0145873, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795657765405086522, guid: 6d637b6383ca43541adac67dd0145873, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7247908015042870166, guid: 6d637b6383ca43541adac67dd0145873, type: 3}
       propertyPath: m_Name
       value: Car
