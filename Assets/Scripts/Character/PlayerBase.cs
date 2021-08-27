@@ -27,7 +27,6 @@ public class PlayerBase: MonoBehaviour
     {
         if (other.tag.Equals("Obstacle")) //Player takes damage when entering to the obstacle trigger
         {
-            Debug.Log("Çat!");
             hit = true;
             temp = health - 20;
             StartCoroutine(cameraShake.CamShake(20, 0.5f));

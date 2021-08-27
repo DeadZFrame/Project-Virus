@@ -11,6 +11,7 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private CarController car;
 
     public TextMeshProUGUI speedometer;
+    public TextMeshProUGUI time_txt;
     public Slider healthBar;
 
     public Image wayPoint;
@@ -33,6 +34,7 @@ public class UI_Manager : MonoBehaviour
     {
         Speedometer();
         HealthBar();
+        time_decrease();
     }
 
     public void HealthBar()
@@ -89,5 +91,10 @@ public class UI_Manager : MonoBehaviour
             }
         }
 
+    }
+    public void time_decrease()
+    {
+        int time = (int)time_manager.current_time;
+        time_txt.text = time.ToString();
     }
 }
