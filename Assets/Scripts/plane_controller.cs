@@ -178,7 +178,7 @@ public class plane_controller : MonoBehaviour
     }
     public void rotate_vertically()
     {
-        Debug.Log((1 - 20 / rotation_referance.rotation.eulerAngles.x) / 5);
+
         //Debug.Log(rotation_referance.rotation.eulerAngles.x);
         Vector3 delta_rotation = Global_rotation * Time.fixedDeltaTime;
         rotation_referance.Rotate(new Vector3(0,Global_rotation.y * Time.deltaTime ,Mathf.Abs(Global_rotation.z) * Time.deltaTime) * 2);
@@ -306,7 +306,7 @@ public class plane_controller : MonoBehaviour
         }
         Vector3 difference = passed_rotation - real_rotation;
         rotation_referance.Rotate(difference * Time.deltaTime);
-        
+        Debug.Log(difference);
         if(Vector3.Distance(difference, Vector3.zero) < 10)
         {
             in_area = true;

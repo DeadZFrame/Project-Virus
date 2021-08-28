@@ -9,6 +9,7 @@ TagManager:
   - Thunder
   - border
   - tornado
+  - ai_car
   layers:
   - Default
   - TransparentFX
