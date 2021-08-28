@@ -964,6 +964,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7689905464319840920, guid: 7f7a8564d2764a245b1838ac23883736, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3807789542828577486}
+    - target: {fileID: 7689905464319840920, guid: 7f7a8564d2764a245b1838ac23883736, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Reload
+      objectReference: {fileID: 0}
     - target: {fileID: 8280210966970414001, guid: 7f7a8564d2764a245b1838ac23883736, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1

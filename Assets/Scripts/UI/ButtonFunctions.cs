@@ -54,6 +54,11 @@ public class ButtonFunctions : MonoBehaviour
         pauseMenu.gameObject.SetActive(false);
     }
 
+    public void Reload()
+    {
+        SceneManager.LoadScene(scene.buildIndex);
+    }
+
     public void Play() //Starts game from main menu
     {
         mainMenuPlayAnimation.gameObject.SetActive(true);

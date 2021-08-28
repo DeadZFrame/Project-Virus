@@ -8,7 +8,7 @@ public class manage_scene : MonoBehaviour
     private void Update()
     {
         //if pressed r reste the level
-        if(Input.GetKey("r"))
+        if(Input.GetKey(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
