@@ -10,6 +10,7 @@ public class plane_controller : MonoBehaviour
     public float speed = 5f;
     public float rotation_speed = 5f;
     public float max_speed = 5000;
+    public float r_s = 10;
     private TextMeshProUGUI border_text;
 
     private Vector3 direction;
@@ -177,29 +178,38 @@ public class plane_controller : MonoBehaviour
     }
     public void rotate_vertically()
     {
-        
         Vector3 delta_rotation = Global_rotation * Time.fixedDeltaTime;
-        rotation_referance.Rotate(delta_rotation);
+        rotation_referance.Rotate(new Vector3(0,Global_rotation.y * Time.deltaTime ,Mathf.Abs(Global_rotation.z) * Time.deltaTime) * 2);
         //Debug.Log(rotation_referance.rotation.x);
-        if (rotation_referance.rotation.eulerAngles.x< 180 && rotation_referance.rotation.eulerAngles.x > 20)
+        if (rotation_referance.rotation.eulerAngles.x< 70 && rotation_referance.rotation.eulerAngles.x > 30)
         {
             //left
-            if (Global_rotation.y > -10)
+            if (Global_rotation.z > -20)
             {
-                Global_rotation.y -= Time.fixedDeltaTime * 5;
+                Global_rotation.z = ((1 - 20 / rotation_referance.rotation.eulerAngles.x)/5) * r_s;
+                Global_rotation.y = -(0.15f - Global_rotation.z/r_s) * 100;
+                
             }
         }
-        if(rotation_referance.rotation.eulerAngles.x >= 180 && rotation_referance.rotation.eulerAngles.x < 340)
+        if(rotation_referance.rotation.eulerAngles.x >= 290 && rotation_referance.rotation.eulerAngles.x < 330)
         {
             //right
-            if(Global_rotation.y < 10)
+            if(Global_rotation.z < 20)
             {
-                Global_rotation.y += Time.fixedDeltaTime * 5;
+                Global_rotation.z = (340 / rotation_referance.rotation.eulerAngles.x - 1) * r_s;
+                Global_rotation.y = (0.17f - Global_rotation.z / r_s) * 50;
             }
         }
-        else if(rotation_referance.rotation.x < 0.1 && rotation_referance.rotation.x > -0.1)
+        else if(rotation_referance.rotation.eulerAngles.x < 30 || rotation_referance.rotation.eulerAngles.x > 330)
         {
-            Global_rotation.y = 0;
+            while(Global_rotation.z > 0)
+            {
+                Global_rotation.z -= Time.deltaTime;
+            }
+            while (Global_rotation.y > 0)
+            {
+                Global_rotation.y -= Time.deltaTime;
+            }
         }
         
     }
