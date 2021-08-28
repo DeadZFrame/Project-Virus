@@ -1,32 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class meteor_script : MonoBehaviour
 {
-    private GameObject particule_to_create;
-    public GameObject cam; //it is to avoid the camera's destruction
+    public GameObject particule_to_create;
+    private GameObject cam; //it is to avoid the camera's destruction
+    private Transform airplane;
 
     private void Awake()
     {
         cam = GameObject.Find("Main Camera");
     }
-    private void OnCollisionEnter(Collision collision)
+    private IEnumerator OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.tag == "ground")
+        if(collision.collider.tag == "Player")
         {
-            Destroy(gameObject);
+            create_particules();
+            yield return new WaitForSeconds(1f);
+            MeshRenderer airplane_gfx = GameObject.Find("Jet").GetComponent<MeshRenderer>();
+            airplane_gfx.enabled = false;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //Destroy(collision.gameObject);
         }
-        else if(collision.collider.tag == "Player")
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "ground")
         {
-            //create_particules();
-            cam.transform.parent = null;
-            Destroy(collision.gameObject);
             Destroy(gameObject);
         }
     }
     public void create_particules()
     {
-        Instantiate(particule_to_create, transform.position, Quaternion.identity);
+        airplane = GameObject.Find("Jet").GetComponent<Transform>();
+        Instantiate(particule_to_create, airplane);
     }
 }

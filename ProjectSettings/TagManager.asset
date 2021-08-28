@@ -8,6 +8,7 @@ TagManager:
   - ground
   - Thunder
   - border
+  - tornado
   layers:
   - Default
   - TransparentFX

@@ -10,7 +10,7 @@ public class manage_scene : MonoBehaviour
         //if pressed r reste the level
         if(Input.GetKey("r"))
         {
-            Debug.Log("yes");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
