@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/car_scene.unity
     guid: 75f9ed664a471e84bbbceea5d78fab84
+  - enabled: 1
+    path: Assets/Scenes/deneme.unity
+    guid: 8e013ed64a687a240b038cb86b7724d2
   m_configObjects: {}

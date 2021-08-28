@@ -15,10 +15,13 @@ public class PlayerBase: MonoBehaviour
 
     private bool hit = false;
     private bool particule_created = false;
+
+    Scene scene;
     private void Awake()
     {
         cameraShake = FindObjectOfType<CameraShake>();
         health = 100;
+        scene = SceneManager.GetActiveScene();
     }
 
     private void Update()
@@ -45,6 +48,10 @@ public class PlayerBase: MonoBehaviour
             hit = true;
             temp = health - 20;
             StartCoroutine(cameraShake.CamShake(20, 0.5f));
+        }
+        if(other.name == "Finish")
+        {
+            SceneManager.LoadScene(scene.buildIndex+1);
         }
     }
 

@@ -2936,6 +2936,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3082242201398515931, guid: a30a578db8a52754b927470e2b578a9c, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: e6a3e24c08ee9894ca915e8315529701, type: 2}
+    - target: {fileID: 3082242201398515931, guid: a30a578db8a52754b927470e2b578a9c, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3396367327383587314, guid: e6a3e24c08ee9894ca915e8315529701, type: 2}
+    - target: {fileID: 3082242201398515931, guid: a30a578db8a52754b927470e2b578a9c, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294908160
       objectReference: {fileID: 0}
@@ -3349,9 +3357,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6861181266801430284, guid: eefbc8f94bb238941a6b7790e7465ae7, type: 3}
+      propertyPath: m_text
+      value: Wasted
+      objectReference: {fileID: 0}
+    - target: {fileID: 6861181266801430284, guid: eefbc8f94bb238941a6b7790e7465ae7, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6861181266801430284, guid: eefbc8f94bb238941a6b7790e7465ae7, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: e6a3e24c08ee9894ca915e8315529701, type: 2}
+    - target: {fileID: 6861181266801430284, guid: eefbc8f94bb238941a6b7790e7465ae7, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3396367327383587314, guid: e6a3e24c08ee9894ca915e8315529701, type: 2}
     - target: {fileID: 7025127545721321234, guid: eefbc8f94bb238941a6b7790e7465ae7, type: 3}
       propertyPath: m_Name
       value: you died
@@ -4911,6 +4931,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3074023263107145405, guid: 4ccc208ed70372548b187eefa2c59f8a, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: e6a3e24c08ee9894ca915e8315529701, type: 2}
+    - target: {fileID: 3074023263107145405, guid: 4ccc208ed70372548b187eefa2c59f8a, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3396367327383587314, guid: e6a3e24c08ee9894ca915e8315529701, type: 2}
     - target: {fileID: 3074023263107145405, guid: 4ccc208ed70372548b187eefa2c59f8a, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294913280

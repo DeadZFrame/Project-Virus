@@ -123,6 +123,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &25776197
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 282786164363213131, guid: 4734f8c7a289f96439c883c6865d4ec3, type: 3}
+      propertyPath: m_Name
+      value: Finish
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362442370239680403, guid: 4734f8c7a289f96439c883c6865d4ec3, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362442370239680403, guid: 4734f8c7a289f96439c883c6865d4ec3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -117.359
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362442370239680403, guid: 4734f8c7a289f96439c883c6865d4ec3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.635
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362442370239680403, guid: 4734f8c7a289f96439c883c6865d4ec3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -229.182
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362442370239680403, guid: 4734f8c7a289f96439c883c6865d4ec3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362442370239680403, guid: 4734f8c7a289f96439c883c6865d4ec3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362442370239680403, guid: 4734f8c7a289f96439c883c6865d4ec3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362442370239680403, guid: 4734f8c7a289f96439c883c6865d4ec3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362442370239680403, guid: 4734f8c7a289f96439c883c6865d4ec3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362442370239680403, guid: 4734f8c7a289f96439c883c6865d4ec3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362442370239680403, guid: 4734f8c7a289f96439c883c6865d4ec3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4734f8c7a289f96439c883c6865d4ec3, type: 3}
 --- !u!224 &40836099 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4310840515022797374, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
@@ -211,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9438802af2ef347499f3f08729dc6afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_time_in_seconds: 60
+  max_time_in_seconds: 180
   end_text: {fileID: 1163377502}
   time_txt: {fileID: 0}
 --- !u!114 &309527092
@@ -355,7 +412,8 @@ MonoBehaviour:
   settingsMenu: {fileID: 0}
   controlsMenu: {fileID: 0}
   creditsMenu: {fileID: 0}
-  audio: {fileID: 0}
+  audioSource: {fileID: 0}
+  volumeSlider: {fileID: 0}
 --- !u!1 &1012123024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,6 +1233,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6377319230205946127, guid: 1dbfd3940dd8930469dc147f7bbd6e73, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: e6a3e24c08ee9894ca915e8315529701, type: 2}
+    - target: {fileID: 6377319230205946127, guid: 1dbfd3940dd8930469dc147f7bbd6e73, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dbfd3940dd8930469dc147f7bbd6e73, type: 3}
 --- !u!1001 &40827390915095756
@@ -1440,6 +1506,22 @@ PrefabInstance:
       value: Arrive at the airport before the plane takes off
       objectReference: {fileID: 0}
     - target: {fileID: 157402500363229011, guid: 9b3637225779b8c45b192ac1ae1be9cc, type: 3}
+      propertyPath: m_margin.w
+      value: 86.757935
+      objectReference: {fileID: 0}
+    - target: {fileID: 157402500363229011, guid: 9b3637225779b8c45b192ac1ae1be9cc, type: 3}
+      propertyPath: m_margin.x
+      value: -45.72815
+      objectReference: {fileID: 0}
+    - target: {fileID: 157402500363229011, guid: 9b3637225779b8c45b192ac1ae1be9cc, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: e6a3e24c08ee9894ca915e8315529701, type: 2}
+    - target: {fileID: 157402500363229011, guid: 9b3637225779b8c45b192ac1ae1be9cc, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3396367327383587314, guid: e6a3e24c08ee9894ca915e8315529701, type: 2}
+    - target: {fileID: 157402500363229011, guid: 9b3637225779b8c45b192ac1ae1be9cc, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294967295
       objectReference: {fileID: 0}
@@ -1517,7 +1599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6155734527697794741, guid: 9b3637225779b8c45b192ac1ae1be9cc, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 52
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6155734527697794741, guid: 9b3637225779b8c45b192ac1ae1be9cc, type: 3}
       propertyPath: m_AnchoredPosition.y
