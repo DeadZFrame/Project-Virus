@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -40,7 +38,7 @@ public class ButtonFunctions : MonoBehaviour
             {
                 SceneManager.LoadScene(scene.buildIndex + 1);
             }
-            audioSource.volume -= 0.5f * Time.deltaTime;
+            audioSource.volume -= 0.05f * Time.deltaTime;
         }
     }
 
