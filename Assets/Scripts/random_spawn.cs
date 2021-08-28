@@ -26,6 +26,7 @@ public class random_spawn : MonoBehaviour
     private List<GameObject> generatable_roads = new List<GameObject>();
     //private List<GameObject> object_to_add = new List<GameObject>();
     private int choosed_index = -1;
+    private Vector3 car_start_pos;
     //the direction where to spawn the obstacles
     //public Vector3 spawn_direction = Vector3.right;
 
@@ -37,7 +38,7 @@ public class random_spawn : MonoBehaviour
         {
             generatable_roads.Add(roads[i]);
         }*/
-
+        car_start_pos = player.transform.position;
         scene = SceneManager.GetActiveScene();
         if(scene.name == "car_scene" || scene.name == "2012-Level1")
         {
@@ -62,11 +63,15 @@ public class random_spawn : MonoBehaviour
 
         for (float i = start_point.x + rand_vertical; i < end_point.x; i += rand_vertical)
         {
-            int rand_horizontal = Random.Range(-2, 3);
-            float new_value = rand_horizontal * horizantal_width;
-            GameObject random_object = get_random_object(objects);
-            Instantiate(random_object, new Vector3(i, random_object.transform.position.y, start_point.z + new_value), Quaternion.identity);
-            rand_vertical = Random.Range((int)randomness.x, (int)randomness.y);
+            if(i > car_start_pos.x + 1 || i < car_start_pos.x - 1)
+            {
+
+                int rand_horizontal = Random.Range(-2, 3);
+                float new_value = rand_horizontal * horizantal_width;
+                GameObject random_object = get_random_object(objects);
+                Instantiate(random_object, new Vector3(i, random_object.transform.position.y, start_point.z + new_value), Quaternion.identity);
+                rand_vertical = Random.Range((int)randomness.x, (int)randomness.y);
+            }
         }
     }
     private void Generate_road(Vector3 start_point, Vector3 end_point, float length)
