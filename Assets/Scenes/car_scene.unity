@@ -790,19 +790,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48c6c9bd210d257459aaa4b9fe3fc276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1502853071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1502853067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85676f015fb74fe4c908f68b559ca44c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosion_particule: {fileID: 0}
 --- !u!1001 &1660719580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -845,14 +832,6 @@ PrefabInstance:
     - target: {fileID: 3772777954114145152, guid: 89b5e58a8db10704d84c9c9c33d77e21, type: 3}
       propertyPath: m_Name
       value: NissanR35 V2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3772777954114145152, guid: 89b5e58a8db10704d84c9c9c33d77e21, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3772777954114145152, guid: 89b5e58a8db10704d84c9c9c33d77e21, type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4544212442746868026, guid: 89b5e58a8db10704d84c9c9c33d77e21, type: 3}
       propertyPath: m_RootOrder
@@ -1046,11 +1025,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4310840515238901343, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
       propertyPath: speedometerOffset.x
-      value: -40
+      value: 550
       objectReference: {fileID: 0}
     - target: {fileID: 4310840515238901343, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
       propertyPath: speedometerOffset.y
-      value: 50
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 4310840515464108341, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
       propertyPath: m_RootOrder
