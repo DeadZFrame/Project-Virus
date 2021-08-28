@@ -178,6 +178,8 @@ public class plane_controller : MonoBehaviour
     }
     public void rotate_vertically()
     {
+
+        //Debug.Log(rotation_referance.rotation.eulerAngles.x);
         Vector3 delta_rotation = Global_rotation * Time.fixedDeltaTime;
         rotation_referance.Rotate(new Vector3(0,Global_rotation.y * Time.deltaTime ,Mathf.Abs(Global_rotation.z) * Time.deltaTime) * 2);
         //Debug.Log(rotation_referance.rotation.x);
@@ -187,7 +189,7 @@ public class plane_controller : MonoBehaviour
             if (Global_rotation.z > -20)
             {
                 Global_rotation.z = ((1 - 20 / rotation_referance.rotation.eulerAngles.x)/5) * r_s;
-                Global_rotation.y = -(0.15f - Global_rotation.z/r_s) * 100;
+                Global_rotation.y = -(0.142f - Global_rotation.z/r_s) * 100;
                 
             }
         }
@@ -197,18 +199,34 @@ public class plane_controller : MonoBehaviour
             if(Global_rotation.z < 20)
             {
                 Global_rotation.z = (340 / rotation_referance.rotation.eulerAngles.x - 1) * r_s;
-                Global_rotation.y = (0.17f - Global_rotation.z / r_s) * 50;
+                Global_rotation.y = ((0.17f - Global_rotation.z / r_s) -0.01f) * 50;
             }
         }
         else if(rotation_referance.rotation.eulerAngles.x < 30 || rotation_referance.rotation.eulerAngles.x > 330)
         {
-            while(Global_rotation.z > 0)
+            
+            while (Mathf.Abs(Global_rotation.z) > 0.05)
             {
                 Global_rotation.z -= Time.deltaTime;
             }
-            while (Global_rotation.y > 0)
+            if(Mathf.Abs(Global_rotation.z) <= 0.1)
             {
-                Global_rotation.y -= Time.deltaTime;
+                Global_rotation.z = 0;
+            }
+            while (Mathf.Abs(Global_rotation.y) > 1)
+            {
+                if(Global_rotation.y > 0)
+                {
+                    Global_rotation.y -= Time.deltaTime;
+                }
+                else if(Global_rotation.y < 0)
+                {
+                    Global_rotation.y += Time.deltaTime;
+                }
+            }
+            if(Mathf.Abs(Global_rotation.y) <= 1)
+            {
+                Global_rotation.y = 0;
             }
         }
         
@@ -288,7 +306,7 @@ public class plane_controller : MonoBehaviour
         }
         Vector3 difference = passed_rotation - real_rotation;
         rotation_referance.Rotate(difference * Time.deltaTime);
-        
+        Debug.Log(difference);
         if(Vector3.Distance(difference, Vector3.zero) < 10)
         {
             in_area = true;

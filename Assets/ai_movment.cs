@@ -20,6 +20,7 @@ public class ai_movment : MonoBehaviour
     {
         if(collision.collider.tag == "Player")
         {
+            Debug.Log("yes");
             //player_rb.AddForce(new Vector3(1000000, 1000000, 1000000));
             collision.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(-force, 0, 0));
         }
