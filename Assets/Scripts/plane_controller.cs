@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class plane_controller : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class plane_controller : MonoBehaviour
     public float speed = 5f;
     public float rotation_speed = 5f;
     public float max_speed = 5000;
+    private TextMeshProUGUI border_text;
 
     private Vector3 direction;
 
@@ -250,6 +252,8 @@ public class plane_controller : MonoBehaviour
         {
             in_area = false;
             passed_rotation = other.gameObject.GetComponent<reverse_plain>().reversed_direction;
+            border_text = GameObject.Find("border text").GetComponent<TextMeshProUGUI>();
+            border_text.enabled = true;
         }
     }
     private void passing_border()
