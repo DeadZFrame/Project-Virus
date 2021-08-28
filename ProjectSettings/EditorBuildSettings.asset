@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/deneme.unity
     guid: 8e013ed64a687a240b038cb86b7724d2
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: d54f4118a6b1e454e8c90c6bf44e20a8
   m_configObjects: {}
