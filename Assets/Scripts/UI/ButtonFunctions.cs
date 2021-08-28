@@ -18,7 +18,7 @@ public class ButtonFunctions : MonoBehaviour
     private void Awake()
     {
         scene = SceneManager.GetActiveScene();
-        audioSource.volume = 0.1f;
+        if(scene.buildIndex ==0) audioSource.volume = 0.1f;
     }
 
     private void Update()
