@@ -10,13 +10,15 @@ public class ButtonFunctions : MonoBehaviour
     public Image pauseMenu;
     public Animation mainMenuPlayAnimation;
     public GameObject mainMenuVerticalGroup, settingsMenu, controlsMenu, creditsMenu;
-    public AudioSource audio;
+    public AudioSource audioSource;
+    public Slider volumeSlider;
 
     Scene scene;
 
     private void Awake()
     {
         scene = SceneManager.GetActiveScene();
+        audioSource.volume = 0.1f;
     }
 
     private void Update()
@@ -38,7 +40,7 @@ public class ButtonFunctions : MonoBehaviour
             {
                 SceneManager.LoadScene(scene.buildIndex + 1);
             }
-            audio.volume -= 0.5f * Time.deltaTime;
+            audioSource.volume -= 0.5f * Time.deltaTime;
         }
     }
 
