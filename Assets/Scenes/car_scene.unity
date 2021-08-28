@@ -214,6 +214,17 @@ MonoBehaviour:
   max_time_in_seconds: 45
   end_text: {fileID: 1163377502}
   time_txt: {fileID: 0}
+--- !u!114 &454473546 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1302165865425593583, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
+  m_PrefabInstance: {fileID: 1828039804}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &553264538
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,6 +349,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.3947283, y: 0.9376942, z: 3.2789621}
   m_Center: {x: -3.2295296, y: 2.41955, z: -3.5279071}
+--- !u!1 &736845863 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4310840515238901337, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
+  m_PrefabInstance: {fileID: 1828039804}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &736845865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736845863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f68715a8b2ca2764cb8e6bf7341fff1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 454473546}
 --- !u!1 &1012123024
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,9 +862,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1302165865425593583, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818306906594029012, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4310840514743369709, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310840514906369688, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4310840515022797370, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
       propertyPath: m_Name
@@ -925,6 +966,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4310840515238901336, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4310840515238901343, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
       propertyPath: car
       value: 
@@ -936,6 +981,26 @@ PrefabInstance:
     - target: {fileID: 4310840515238901343, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
       propertyPath: motorcycle
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310840515238901343, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
+      propertyPath: speedometerOffset.x
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310840515238901343, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
+      propertyPath: speedometerOffset.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310840515464108341, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310840515547025444, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041870789120778296, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
