@@ -24,7 +24,7 @@ public class CutsceneManager : MonoBehaviour
         }
         if(scene.buildIndex == 7)
         {
-            AudioManager.instance.Play("Moto");
+            AudioManager.instance.Play("rocket");
         }
     }
 
@@ -38,7 +38,19 @@ public class CutsceneManager : MonoBehaviour
         {
             if (scene.buildIndex % 2 == 1 && scene.buildIndex != 7)
             {
-                AudioManager.instance.FadeOut("Moto");
+                if(scene.buildIndex == 1)
+                {
+                    AudioManager.instance.FadeOut("moto");
+                }
+                if (scene.buildIndex == 3)
+                {
+                    AudioManager.instance.FadeOut("car");
+                }
+                if (scene.buildIndex == 5)
+                {
+                    AudioManager.instance.FadeOut("jet");
+                }
+
             }
         }
     }
@@ -47,11 +59,16 @@ public class CutsceneManager : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         fade.Play("FadeToBlack");
-        if(scene.buildIndex != 7)
-            AudioManager.instance.Play("Moto");
+        if(scene.buildIndex == 1)
+            AudioManager.instance.Play("moto");
+        if (scene.buildIndex == 3)
+            AudioManager.instance.Play("car");
+        if (scene.buildIndex == 5)
+            AudioManager.instance.Play("jet");
+
         delayed = true;
 
-            StartCoroutine(DelayNextScene(3f));
+        StartCoroutine(DelayNextScene(3f));
     }
 
     IEnumerator DelayNextScene(float time)

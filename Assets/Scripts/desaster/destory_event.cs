@@ -5,11 +5,13 @@ using UnityEngine;
 public class destory_event : MonoBehaviour
 {
     public GameObject Particule_to_spawn;
+
     public void destroy_object()
     {
         GameObject destroy_object = check_parent(gameObject);
         Instantiate(Particule_to_spawn, destroy_object.transform.position, Quaternion.identity);
         Destroy(destroy_object);
+        AudioManager.instance.Play("thunder");
     }
 
     GameObject check_parent(GameObject @object)

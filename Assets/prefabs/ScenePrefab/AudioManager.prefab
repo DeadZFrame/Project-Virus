@@ -43,4 +43,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1dc5da5b0decbf4a9b93e73c4681690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: car
+    clip: {fileID: 8300000, guid: 4ac03cf1c8dcdec41ac2b64395534827, type: 3}
+    volume: 1
+    audioSource: {fileID: 0}
+  - name: moto
+    clip: {fileID: 8300000, guid: d771ca9885b0900419db607a2e35eccd, type: 3}
+    volume: 1
+    audioSource: {fileID: 0}
+  - name: rocket
+    clip: {fileID: 8300000, guid: a1dc18fceb37d3b4db62707bb8af4e8c, type: 3}
+    volume: 0.15
+    audioSource: {fileID: 0}
+  - name: thunder
+    clip: {fileID: 8300000, guid: 4abe82d760a75b04eaa62f1e00633274, type: 3}
+    volume: 0.3
+    audioSource: {fileID: 0}
+  - name: traffic
+    clip: {fileID: 8300000, guid: 46bc785649fc91844b27293c59db6c39, type: 3}
+    volume: 0.15
+    audioSource: {fileID: 0}
+  - name: jet
+    clip: {fileID: 8300000, guid: 72e63c3e5f1fb0e4ab03045e8c9bcbcf, type: 3}
+    volume: 1
+    audioSource: {fileID: 0}
