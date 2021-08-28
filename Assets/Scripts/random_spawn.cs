@@ -41,7 +41,7 @@ public class random_spawn : MonoBehaviour
         scene = SceneManager.GetActiveScene();
         if(scene.name == "car_scene" || scene.name == "2012-Level1")
         {
-            Genereate_desaster(player.transform.position, end_point, vertical_randomnes);
+            Genereate_desaster(start_point, end_point, vertical_randomnes);
             Generate_road(start_point, end_point, object_lengt);
         }
     }
@@ -65,7 +65,7 @@ public class random_spawn : MonoBehaviour
             int rand_horizontal = Random.Range(-2, 3);
             float new_value = rand_horizontal * horizantal_width;
             GameObject random_object = get_random_object(objects);
-            Instantiate(random_object, new Vector3(i, random_object.transform.position.y, start_point.z + 1 + new_value), Quaternion.identity);
+            Instantiate(random_object, new Vector3(i, random_object.transform.position.y, start_point.z + new_value), Quaternion.identity);
             rand_vertical = Random.Range((int)randomness.x, (int)randomness.y);
         }
     }

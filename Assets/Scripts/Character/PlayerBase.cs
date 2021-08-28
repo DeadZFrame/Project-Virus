@@ -7,13 +7,14 @@ using UnityEngine.SceneManagement;
 public class PlayerBase: MonoBehaviour
 {
     CameraShake cameraShake;
+    public GameObject explosion_particule;
 
     [System.NonSerialized] public static PlayerBase referance;
     public static float health = 100;
     private float temp;
 
-    private bool hit = false;   
-
+    private bool hit = false;
+    private bool particule_created = false;
     private void Awake()
     {
         cameraShake = FindObjectOfType<CameraShake>();
@@ -26,7 +27,13 @@ public class PlayerBase: MonoBehaviour
 
         if(health <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+            if (particule_created)
+            {
+                Instantiate(explosion_particule, gameObject.transform);
+                particule_created = false;
+            }
+            StartCoroutine(load_scene());
         }
     }
 
@@ -34,6 +41,7 @@ public class PlayerBase: MonoBehaviour
     {
         if (other.tag.Equals("Obstacle")) //Player takes damage when entering to the obstacle trigger
         {
+            particule_created = true;
             hit = true;
             temp = health - 20;
             StartCoroutine(cameraShake.CamShake(20, 0.5f));
@@ -51,5 +59,10 @@ public class PlayerBase: MonoBehaviour
             }
         }
 
+    }
+    IEnumerator load_scene()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

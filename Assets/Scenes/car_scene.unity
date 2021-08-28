@@ -211,9 +211,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9438802af2ef347499f3f08729dc6afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_time_in_seconds: 45
+  max_time_in_seconds: 60
   end_text: {fileID: 1163377502}
   time_txt: {fileID: 0}
+--- !u!114 &309527092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309527088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 645b0d130ce16a249890f75972acef50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &454473546 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1302165865425593583, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
@@ -872,11 +884,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4310840514743369709, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4310840514906369688, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310840514906369689, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4310840515022797370, guid: 95506f56cef22604f8186e392a3569ca, type: 3}
       propertyPath: m_Name
@@ -1396,7 +1412,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 157402500363229011, guid: 9b3637225779b8c45b192ac1ae1be9cc, type: 3}
       propertyPath: m_text
-      value: arrive at the airport before the plane takes off
+      value: Arrive at the airport before the plane takes off
       objectReference: {fileID: 0}
     - target: {fileID: 157402500363229011, guid: 9b3637225779b8c45b192ac1ae1be9cc, type: 3}
       propertyPath: m_fontColor32.rgba
