@@ -56,4 +56,18 @@ public class AudioManager : MonoBehaviour
         }
 
     }
+
+    public void FadeOut(string name)
+    {
+        if (!soundMuted)
+        {
+            Sound s = Array.Find(sounds, sound => sound.name == name);
+            if (s == null)
+            {
+                Debug.LogWarning("Your sound named " + name + " does not exits");
+                return;
+            }
+            s.audioSource.volume -= 0.2f * Time.deltaTime;
+        }
+    }
 }

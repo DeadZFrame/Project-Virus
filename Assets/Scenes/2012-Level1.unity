@@ -3430,6 +3430,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4347818033948245443, guid: a7eec105cfc55c346ad29b099fccc75a, type: 3}
+      propertyPath: sounds.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347818033948245443, guid: a7eec105cfc55c346ad29b099fccc75a, type: 3}
+      propertyPath: sounds.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d771ca9885b0900419db607a2e35eccd, type: 3}
+    - target: {fileID: 4347818033948245443, guid: a7eec105cfc55c346ad29b099fccc75a, type: 3}
+      propertyPath: sounds.Array.data[0].name
+      value: MotoEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347818033948245443, guid: a7eec105cfc55c346ad29b099fccc75a, type: 3}
+      propertyPath: sounds.Array.data[0].volume
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7eec105cfc55c346ad29b099fccc75a, type: 3}
 --- !u!1001 &5424728897349744404

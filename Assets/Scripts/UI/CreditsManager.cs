@@ -15,17 +15,18 @@ public class CreditsManager : MonoBehaviour
             if (!isPlayed)
             {
                 credits.Play();
+                StartCoroutine(DelayAnim(15f));
                 isPlayed = true;
             }
             if (!credits.isPlaying)
             {
-                StartCoroutine(DelayExit(5f));
+                StartCoroutine(DelayExit(10f));
             }
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(0);  
         }
     }
 
@@ -33,5 +34,11 @@ public class CreditsManager : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         SceneManager.LoadScene(0);
+    }
+
+    IEnumerator DelayAnim(float time)
+    {
+        yield return new WaitForSeconds(time);
+        credits.Play("TextFadeOut");
     }
 }

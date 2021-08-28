@@ -15,5 +15,6 @@ public class end_airplane_level : MonoBehaviour
     public void finish_the_level()
     {
         Debug.Log("level_finished");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
