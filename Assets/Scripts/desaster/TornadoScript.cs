@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class TornadoScript : MonoBehaviour
 {
@@ -11,7 +13,8 @@ public class TornadoScript : MonoBehaviour
     private bool moving = false;
 
     public float turnSpeed;
-
+    public float pull_force = 10000;
+    private TextMeshProUGUI dead_text;
     private void Update()
     {
         PositionRandomizer();
@@ -54,5 +57,33 @@ public class TornadoScript : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         moving = false;
+    }
+
+    //tornado hit
+    private IEnumerator OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            GameObject cam = GameObject.Find("Main Camera");
+            GameObject plane = GameObject.Find("airplane");
+            //GameObject follow_object = GameObject.Find("camera_follow_when_crashed");
+            Rigidbody rb = plane.GetComponent<Rigidbody>();
+            //deparent camera
+            cam.transform.parent = null;
+            //add force to the plane through tornado
+            Vector3 direction = gameObject.transform.position - plane.transform.position;
+            direction.y = 0;
+            cam.transform.LookAt(plane.transform);
+            direction = direction.normalized;
+            rb.AddForce(direction * pull_force);
+            dead_text = GameObject.Find("you died").GetComponent<TextMeshProUGUI>();
+            dead_text.enabled = true;
+            yield return new WaitForSeconds(1f);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        else
+        {
+            yield return null;
+        }
     }
 }
