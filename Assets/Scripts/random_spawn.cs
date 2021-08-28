@@ -38,10 +38,11 @@ public class random_spawn : MonoBehaviour
         {
             generatable_roads.Add(roads[i]);
         }*/
-        car_start_pos = player.transform.position;
+        
         scene = SceneManager.GetActiveScene();
         if(scene.name == "car_scene" || scene.name == "2012-Level1")
         {
+            car_start_pos = player.transform.position;
             Genereate_desaster(start_point, end_point, vertical_randomnes);
             Generate_road(start_point, end_point, object_lengt);
         }
