@@ -2838,7 +2838,7 @@ PrefabInstance:
       objectReference: {fileID: 526468923}
     - target: {fileID: 2455083577208294293, guid: 1e111a1c8516bbf4b86cc75b9b780831, type: 3}
       propertyPath: object_lengt
-      value: 6.653
+      value: 6.652
       objectReference: {fileID: 0}
     - target: {fileID: 2455083577208294293, guid: 1e111a1c8516bbf4b86cc75b9b780831, type: 3}
       propertyPath: start_point.x

@@ -1329,8 +1329,8 @@ MonoBehaviour:
   horizantal_width: 10
   object_lengt: 0
   vertical_randomnes: {x: 1, y: 5}
-  tornadoSpawnCount: 15
-  distanceIndex: 2000
+  tornadoSpawnCount: 20
+  distanceIndex: 10000
 --- !u!114 &418938138
 MonoBehaviour:
   m_ObjectHideFlags: 0
