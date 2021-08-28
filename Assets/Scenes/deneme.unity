@@ -2375,6 +2375,7 @@ MonoBehaviour:
   speed: 1
   rotation_speed: 50
   max_speed: 2000
+  r_s: 50
 --- !u!4 &971477919
 Transform:
   m_ObjectHideFlags: 0
