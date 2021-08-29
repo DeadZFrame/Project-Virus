@@ -16,12 +16,15 @@ public class PlayerBase: MonoBehaviour
     private bool hit = false;
     private bool particule_created = false;
 
+    public static bool finished = false;
+
     Scene scene;
     private void Awake()
     {
         cameraShake = FindObjectOfType<CameraShake>();
         health = 100;
         scene = SceneManager.GetActiveScene();
+        finished = false;
     }
 
     private void Update()
@@ -51,6 +54,7 @@ public class PlayerBase: MonoBehaviour
         }
         if(other.name == "Finish")
         {
+            finished = true;
             SceneManager.LoadScene(scene.buildIndex+1);
         }
     }

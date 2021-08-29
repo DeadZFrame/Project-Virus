@@ -23,13 +23,13 @@ public class DontDestroyOnLoad : MonoBehaviour
         else
         {
             gameObject.GetComponent<AudioSource>().Stop();
-
             while (i < @object.Length)
             {
                 Destroy(@object[i]); Debug.Log("exterminate");
                 i++;
             }
         }
+        PlayerBase.finished = false;
     }
 
     private void Update()
@@ -37,6 +37,11 @@ public class DontDestroyOnLoad : MonoBehaviour
         if (!gameObject.GetComponent<AudioSource>().isPlaying)
         {
             gameObject.GetComponent<AudioSource>().Play();
+        }
+
+        if (PlayerBase.finished)
+        {
+            gameObject.GetComponent<AudioSource>().Stop();
         }
     }
 }
