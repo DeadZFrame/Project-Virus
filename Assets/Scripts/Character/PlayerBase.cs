@@ -24,7 +24,6 @@ public class PlayerBase: MonoBehaviour
         cameraShake = FindObjectOfType<CameraShake>();
         health = 100;
         scene = SceneManager.GetActiveScene();
-        finished = false;
     }
 
     private void Update()
