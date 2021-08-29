@@ -17,6 +17,7 @@ public class ButtonFunctions : MonoBehaviour
     {
         scene = SceneManager.GetActiveScene();
         if(scene.buildIndex ==0) audioSource.volume = 0.1f;
+        Time.timeScale = 1f;
     }
 
     private void Update()
